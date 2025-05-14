@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0k3ax6phw487"]
+
+[ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_533ng"]
+[ext_resource type="Script" uid="uid://fmcto1nf6ucy" path="res://scripts/scene_switch_button.gd" id="1_t3q5g"]
+
+[node name="SceneSwitchButton" type="Button"]
+theme = ExtResource("1_533ng")
+script = ExtResource("1_t3q5g")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

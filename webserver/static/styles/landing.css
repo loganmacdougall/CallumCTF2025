@@ -1,0 +1,44 @@
+html {
+  background: #051f39
+}
+
+body {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #051f39;
+}
+
+header {
+  background: #c53a9d;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+header h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.light {
+  width: 128px;
+  aspect-ratio: 1;
+  image-rendering: pixelated;
+  max-width: 11%;
+}
+
+#lights .light:nth-child(even) {
+  transform: scaleX(-1);
+}
+
+.light-on {
+  content: url("/static/media/lightbulb_on.png");
+}
+
+.light-off {
+  content: url("/static/media/lightbulb_off.png");
+}

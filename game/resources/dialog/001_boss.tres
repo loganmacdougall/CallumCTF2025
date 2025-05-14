@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=2 format=3 uid="uid://byq8htj8juqpg"]
+
+[ext_resource type="Script" uid="uid://dnthvyra5b2kj" path="res://scripts/dialog.gd" id="1_jplxu"]
+
+[resource]
+script = ExtResource("1_jplxu")
+string_indices = PackedInt32Array(1, 2, 3, 4, 5)
+metadata/_custom_type_script = "uid://dnthvyra5b2kj"

@@ -1,0 +1,1 @@
+char state(char f){f=f>5?9-f:f;return f==4?170:f==5?85:(1<<(7-f))+(1<<f);}

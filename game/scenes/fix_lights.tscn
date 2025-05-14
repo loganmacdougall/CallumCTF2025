@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjyitduk08s5w"]
+
+[ext_resource type="Texture2D" uid="uid://7pehvsrx4dit" path="res://assets/sprites/lab_bg.png" id="1_vtv41"]
+[ext_resource type="Texture2D" uid="uid://6ip2s82a3hb1" path="res://assets/sprites/potato_boss.png" id="2_d3r1f"]
+[ext_resource type="Script" uid="uid://k312dt4jght4" path="res://scripts/boss.gd" id="3_4b3qe"]
+[ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="4_h5gt4"]
+[ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="6_0vfyd"]
+[ext_resource type="PackedScene" uid="uid://c5wduygpwhgea" path="res://components/textbox.tscn" id="6_b7vim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3r1f"]
+atlas = ExtResource("2_d3r1f")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b3qe"]
+atlas = ExtResource("2_d3r1f")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5gt4"]
+atlas = ExtResource("2_d3r1f")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtnjr"]
+atlas = ExtResource("2_d3r1f")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vfyd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3r1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b3qe")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5gt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtnjr")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}]
+
+[node name="FixLights" type="Node2D"]
+
+[node name="LabBg" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_vtv41")
+centered = false
+
+[node name="PotatoBoss" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1082, 491)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_0vfyd")
+animation = &"mad"
+frame = 1
+frame_progress = 0.1258
+script = ExtResource("3_4b3qe")
+mad = true
+
+[node name="GenericButton" parent="PotatoBoss" instance=ExtResource("4_h5gt4")]
+anchors_preset = -1
+anchor_left = 0.13
+anchor_top = 0.128
+anchor_right = 0.13
+anchor_bottom = 0.128
+offset_left = -14.16
+offset_top = -33.192
+offset_right = 5.84
+offset_bottom = 17.808
+invisable = true
+
+[node name="SceneSwitchButton" parent="." instance=ExtResource("6_0vfyd")]
+offset_left = 220.0
+offset_top = 301.0
+offset_right = 344.0
+offset_bottom = 448.0
+scene = "uid://c7mc72v0glhkm"
+invisable = true
+
+[node name="Textbox" parent="." instance=ExtResource("6_b7vim")]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="PotatoBoss/GenericButton" to="PotatoBoss" method="_on_button_pressed"]

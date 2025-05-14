@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package city_game;
+option go_package = "../server/src/pb";
+
+/////////////////// Enums ///////////////////
+enum Building {
+  Workbench = 0;
+  Furnace = 1;
+  Lumber = 2;
+  Stonepile = 3;
+  Mine = 4;
+  Sandpit = 5;
+  Crate = 6;
+  House = 7;
+}
+
+enum Item {
+  Pickaxe = 0;
+  Bucket = 1;
+  Plank = 2;
+  Stone = 3;
+  Ore = 4;
+  SandBucket = 5;
+  Glass = 6;
+  Metal = 7;
+  Window = 8;
+  Door = 9;
+  IWorkbench = 10;
+  IFurnace = 11;
+  ICrate = 12;
+}
+
+// Sorted in priority order
+enum ActionType {
+  A_Nothing = 0;
+  Place = 1;
+  Give = 2;
+  Take = 3;
+  Interact = 4;
+  Push = 5;
+  Walk = 6;
+}
+
+enum NecromancerActionType {
+  N_Nothing = 0;
+  Summon = 1;
+  Release = 2;
+}
+
+enum Direction {
+  Up = 0;
+  Right = 1;
+  Down = 2;
+  Left = 3;
+}
+
+enum BuildingUpdateType {
+  Remove = 0;
+  Add = 1;
+}
+
+/////////////////// Support Messages ///////////////////
+message Coordinate {
+  uint32 x = 1;
+  uint32 y = 2;
+}
+
+message Stack {
+  Item item_id = 1;
+  uint32 count = 2;
+}
+
+message ItemRequirement {
+  Item item_id = 1;
+  uint32 count = 2;
+  uint32 total = 3;
+}
+
+message ErrorMessage {
+  optional Coordinate coordinate = 1;
+  string message = 2;
+}
+
+/////////////////// Messages ///////////////////
+message BuildingState {
+  Building building_type = 1;
+  Coordinate coordinate = 2;
+  repeated Stack items = 3;
+  uint32 state = 4;
+}
+
+message BuildingUpdate {
+  BuildingUpdateType action_type = 1;
+  optional Coordinate coordinate = 2;
+  optional Building building_type = 3;
+  optional Direction direction = 4;
+}
+
+message Action {
+  ActionType action_type = 1;
+  optional Direction direction = 2;
+  optional Coordinate Coordinate = 3;
+  optional Item item = 4;
+}
+
+message NecromancerAction {
+  NecromancerActionType action_type = 1;
+  optional Coordinate coordinate = 2;
+  optional uint32 helper_id = 3;
+}
+
+message HelperState {
+  uint32 helper_id = 1;
+  Coordinate coordinate = 2;
+  repeated Stack items = 3;
+  Action action = 4;
+}
+
+message CraftingRecipe {
+  repeated Stack requirements = 1;
+  Item result = 2;
+}
+
+message HelperInput {
+  uint32 helper_id = 1;
+  Action action = 2;
+}
+
+message GameState {
+  uint32 tick = 1;
+  uint32 mana = 2;
+  uint32 layer = 3;
+  repeated ItemRequirement layer_requirements = 4;
+  repeated BuildingState building_states = 5;
+  repeated HelperState helper_states = 6;
+  repeated ErrorMessage error_messages = 7;
+}
+
+message GameStateUpdate {
+  uint32 tick = 1;
+  uint32 mana = 2;
+  uint32 layer = 3;
+  repeated BuildingUpdate building_updates = 4;
+  repeated HelperState helper_states = 5;
+  repeated ErrorMessage error_messages = 6;
+}
+
+message GameInput {
+  NecromancerAction necromancer_action = 1;
+  repeated HelperInput helper_input = 2;
+}

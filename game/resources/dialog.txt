@@ -1,0 +1,5 @@
+Hey engineer, I need you to fix the lights on the about page
+It's been broken for the longest time, and they need to be reprogrammed
+The lights should match the sequence on the picture behind me
+But our blasted server has an ancient architecture and he can't make it work within the restrictions of the machine
+If you could, help my useless intern write some C code

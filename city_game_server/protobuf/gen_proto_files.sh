@@ -1,0 +1,1 @@
+protoc --python_out=. --go_out=. --csharp_out=. city_game_proto.proto

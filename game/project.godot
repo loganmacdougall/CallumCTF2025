@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="CallumCTF2025"
+config/description="Using your computer knowledge, help the people with their tasks and receive the prize at the end."
+run/main_scene="uid://c7mc72v0glhkm"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Cursor="*res://scripts/cursor.gd"
+SceneTransition="*res://components/scene_transition.tscn"
+DialogManager="*res://scripts/dialog_manager.gd"
+GlobalState="*res://scripts/state.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

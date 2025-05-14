@@ -1,0 +1,164 @@
+[gd_scene load_steps=13 format=3 uid="uid://c7mc72v0glhkm"]
+
+[ext_resource type="Script" uid="uid://qe8vdqchmdmw" path="res://scripts/fix_lights_computer.gd" id="1_3po3b"]
+[ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_7amii"]
+[ext_resource type="Shader" uid="uid://ccxpniaohds6c" path="res://shaders/fix_lights_computer.gdshader" id="1_7ylfn"]
+[ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="3_jdncw"]
+[ext_resource type="Script" uid="uid://bpbsyudtix1ng" path="res://scripts/generic_button.gd" id="3_ubhog"]
+[ext_resource type="FontFile" uid="uid://bhmxcexa3h4f4" path="res://assets/fonts/CourierPrime-Bold.ttf" id="5_ydva3"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_0fyuf"]
+number_color = Color(0.772549, 0.227451, 0.615686, 1)
+symbol_color = Color(0.772549, 0.227451, 0.615686, 1)
+function_color = Color(0.772549, 0.227451, 0.615686, 1)
+member_variable_color = Color(0.772549, 0.227451, 0.615686, 1)
+keyword_colors = {
+"[": Color(0.290196, 0.141176, 0.501961, 1),
+"]": Color(0.290196, 0.141176, 0.501961, 1)
+}
+member_keyword_colors = {
+"[": Color(0.290196, 0.141176, 0.501961, 1),
+"]": Color(0.290196, 0.141176, 0.501961, 1)
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygap4"]
+bg_color = Color(0.290196, 0.141176, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3po3b"]
+bg_color = Color(0.290196, 0.141176, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdncw"]
+bg_color = Color(0.290196, 0.141176, 0.501961, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ylfn"]
+shader = ExtResource("1_7ylfn")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.17
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.105
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 5.63
+shader_parameter/roll_variation = 0.595
+shader_parameter/distort_intensity = 0.015
+shader_parameter/noise_opacity = 0.07
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.303
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.328
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ubhog"]
+
+[node name="FixLightsComputer" type="Node2D"]
+script = ExtResource("1_3po3b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.556863, 0.501961, 1)
+
+[node name="CodeEdit" type="CodeEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 997.0
+offset_bottom = 493.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_7amii")
+theme_override_colors/background_color = Color(0.290196, 0.141176, 0.501961, 1)
+theme_override_colors/font_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_font_sizes/font_size = 30
+text = "char state(char frame) {
+	return frame % 2 ? 255 : 0;
+}"
+syntax_highlighter = SubResource("CodeHighlighter_0fyuf")
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
+offset_left = 1029.0
+offset_top = 485.0
+offset_right = 1259.0
+offset_bottom = 688.0
+theme = ExtResource("1_7amii")
+theme_override_colors/font_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ygap4")
+text = "Reset"
+script = ExtResource("3_ubhog")
+metadata/_custom_type_script = "uid://bpbsyudtix1ng"
+
+[node name="BackButton" parent="CanvasLayer" instance=ExtResource("3_jdncw")]
+offset_left = 1033.0
+offset_top = 252.0
+offset_right = 1257.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_3po3b")
+text = "Back"
+scene = "uid://bjyitduk08s5w"
+
+[node name="SendButton" type="Button" parent="CanvasLayer"]
+offset_left = 1034.0
+offset_top = 40.0
+offset_right = 1257.0
+offset_bottom = 233.0
+theme = ExtResource("1_7amii")
+theme_override_colors/font_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ygap4")
+text = "Send"
+script = ExtResource("3_ubhog")
+metadata/_custom_type_script = "uid://bpbsyudtix1ng"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 38.0
+offset_top = 516.0
+offset_right = 1001.0
+offset_bottom = 688.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 2
+theme = ExtResource("1_7amii")
+theme_override_colors/default_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_fonts/normal_font = ExtResource("5_ydva3")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_jdncw")
+text = "Waiting for program to be sent"
+selection_enabled = true
+drag_and_drop_selection_enabled = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+top_level = true
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_7ylfn")
+scale = Vector2(1280, 720)
+texture = SubResource("CanvasTexture_ubhog")
+centered = false
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+timeout = 10.0
+
+[connection signal="text_changed" from="CanvasLayer/CodeEdit" to="." method="_on_code_edit_text_changed"]
+[connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SendButton" to="." method="_on_send_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
