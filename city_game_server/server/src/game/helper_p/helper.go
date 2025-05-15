@@ -125,7 +125,7 @@ func handle_helper_walking(helper_state *pb.HelperState, mn *nsm.NextStateManage
 func handle_helper_give(helper_state *pb.HelperState, mn *nsm.NextStateManager) {
 	defer hu.CompleteAction(helper_state)
 
-	if helper_state.Action.Item == nil {
+	if helper_state.Action.ItemId == nil {
 		mn.AddError(
 			fmt.Sprintf("helper %d with action to give but but must specify an item in the action", helper_state.HelperId),
 			helper_state.Coordinate)
@@ -150,7 +150,7 @@ func handle_helper_give(helper_state *pb.HelperState, mn *nsm.NextStateManager) 
 		return
 	}
 
-	item := *helper_state.Action.Item
+	item := *helper_state.Action.ItemId
 	stack_index := hu.HasItem(helper_state, item)
 
 	if stack_index == -1 {
@@ -175,7 +175,7 @@ func handle_helper_give(helper_state *pb.HelperState, mn *nsm.NextStateManager) 
 func handle_helper_take(helper_state *pb.HelperState, mn *nsm.NextStateManager) {
 	defer hu.CompleteAction(helper_state)
 
-	if helper_state.Action.Item == nil {
+	if helper_state.Action.ItemId == nil {
 		mn.AddError(
 			fmt.Sprintf("helper %d with action take but but must specify an item in the action", helper_state.HelperId),
 			helper_state.Coordinate)
@@ -207,7 +207,7 @@ func handle_helper_take(helper_state *pb.HelperState, mn *nsm.NextStateManager) 
 			helper_state.Coordinate)
 	}
 
-	item := *helper_state.Action.Item
+	item := *helper_state.Action.ItemId
 	stack_index := bu.HasItem(target_building, item)
 
 	if stack_index == -1 {
@@ -225,7 +225,7 @@ func handle_helper_take(helper_state *pb.HelperState, mn *nsm.NextStateManager) 
 func handle_helper_place(helper_state *pb.HelperState, mn *nsm.NextStateManager) {
 	defer hu.CompleteAction(helper_state)
 
-	if helper_state.Action.Item == nil {
+	if helper_state.Action.ItemId == nil {
 		mn.AddError(
 			fmt.Sprintf("helper %d with action place but but must specify an item in the action", helper_state.HelperId),
 			helper_state.Coordinate)
@@ -250,7 +250,7 @@ func handle_helper_place(helper_state *pb.HelperState, mn *nsm.NextStateManager)
 		return
 	}
 
-	item := *helper_state.Action.Item
+	item := *helper_state.Action.ItemId
 	stack_index := hu.HasItem(helper_state, item)
 
 	if stack_index == -1 {

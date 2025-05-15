@@ -8,6 +8,10 @@ RUN wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz \
 RUN mkdir /app
 WORKDIR /app
 
-COPY . .
+COPY go.mod ./
+RUN go mod download
 
-ENTRYPOINT ["go", "run", "src/main.go"]
+COPY . .
+RUN go build -v -o /usr/local/bin/app ./src
+
+CMD ["app"]

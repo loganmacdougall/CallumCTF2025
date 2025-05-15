@@ -109,7 +109,7 @@ func TestCrafting1(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Give,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &stone,
+				ItemId:     &stone,
 			},
 		},
 		{
@@ -117,7 +117,7 @@ func TestCrafting1(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Give,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &planks,
+				ItemId:     &planks,
 			},
 		},
 	}
@@ -154,7 +154,7 @@ func TestCrafting1(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Give,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &stone,
+				ItemId:     &stone,
 			},
 		},
 		{
@@ -162,7 +162,7 @@ func TestCrafting1(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Interact,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &workbench,
+				ItemId:     &workbench,
 			},
 		},
 	}
@@ -197,7 +197,7 @@ func TestCrafting1(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Give,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &stone,
+				ItemId:     &stone,
 			},
 		},
 	}
@@ -212,7 +212,7 @@ func TestCrafting1(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Interact,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &furnace,
+				ItemId:     &furnace,
 			},
 		},
 	}
@@ -334,7 +334,7 @@ func TestCrafting2(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Give,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &stone,
+				ItemId:     &stone,
 			},
 		},
 		{
@@ -342,7 +342,7 @@ func TestCrafting2(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Give,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &planks,
+				ItemId:     &planks,
 			},
 		},
 	}
@@ -379,7 +379,7 @@ func TestCrafting2(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Interact,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &pickaxe,
+				ItemId:     &pickaxe,
 			},
 		},
 		{
@@ -387,7 +387,7 @@ func TestCrafting2(t *testing.T) {
 			Action: &pb.Action{
 				ActionType: pb.ActionType_Interact,
 				Coordinate: &pb.Coordinate{X: 18, Y: 16},
-				Item:       &pickaxe,
+				ItemId:     &pickaxe,
 			},
 		},
 	}

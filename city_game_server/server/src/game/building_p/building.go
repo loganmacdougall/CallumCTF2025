@@ -63,12 +63,12 @@ func interact_mine(building_state *pb.BuildingState, helper_state *pb.HelperStat
 }
 
 func interact_workbench(building_state *pb.BuildingState, helper_state *pb.HelperState, mn *nsm.NextStateManager) {
-	if helper_state.Action.Item == nil {
+	if helper_state.Action.ItemId == nil {
 		mn.AddError(fmt.Sprintf("helper %d with action interact tried interacting with a workbench but didn't specify item to craft", helper_state.HelperId), helper_state.Coordinate)
 		return
 	}
 
-	item_to_craft := helper_state.Action.Item
+	item_to_craft := helper_state.Action.ItemId
 	recipes := consts.GetCraftingRecipes()
 
 	item_recipe, found := recipes[*item_to_craft]

@@ -28,9 +28,10 @@ func GetNextState(state *pb.GameState, input *pb.GameInput) *pb.GameState {
 
 func CreateInitialState() *pb.GameState {
 	state := &pb.GameState{
-		Tick:  0,
-		Layer: 0,
-		Mana:  consts.MANA_MAX,
+		Tick:              0,
+		Layer:             0,
+		Mana:              consts.MANA_MAX,
+		LayerRequirements: consts.GetLayerRequirements(0),
 	}
 
 	add_building := func(building pb.Building, x int, y int) {

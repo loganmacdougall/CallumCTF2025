@@ -2,23 +2,23 @@ package consts
 
 import (
 	"city_game/src/pb"
-	"sync"
 )
 
 type ItemCraftingRecipes map[pb.Item]*pb.CraftingRecipe
 
-var (
-	crafting_recipes           map[pb.Item]*pb.CraftingRecipe
-	init_once_crafting_recipes sync.Once
-)
+var crafting_recipes ItemCraftingRecipes
 
-func GetCraftingRecipes() map[pb.Item]*pb.CraftingRecipe {
-	init_once_crafting_recipes.Do(initialize_recipes)
+func GetCraftingRecipes() ItemCraftingRecipes {
+	initialize_recipes()
 	return crafting_recipes
 }
 
 func initialize_recipes() {
-	crafting_recipes = map[pb.Item]*pb.CraftingRecipe{
+	if crafting_recipes != nil {
+		return
+	}
+
+	crafting_recipes = ItemCraftingRecipes{
 		pb.Item_IWorkbench: {
 			Requirements: []*pb.Stack{
 				{ItemId: pb.Item_Plank, Count: 4},

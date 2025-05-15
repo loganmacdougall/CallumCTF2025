@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ity_game_proto.proto\x12\tcity_game\"\"\n\nCoordinate\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\"8\n\x05Stack\x12 \n\x07item_id\x18\x01 \x01(\x0e\x32\x0f.city_game.Item\x12\r\n\x05\x63ount\x18\x02 \x01(\r\"\x96\x01\n\rBuildingState\x12*\n\rbuilding_type\x18\x01 \x01(\x0e\x32\x13.city_game.Building\x12)\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.Coordinate\x12\x1f\n\x05items\x18\x03 \x03(\x0b\x32\x10.city_game.Stack\x12\r\n\x05state\x18\x04 \x01(\r\"\x82\x02\n\x0e\x42uildingUpdate\x12\x32\n\x0b\x61\x63tion_type\x18\x01 \x01(\x0e\x32\x1d.city_game.BuildingUpdateType\x12.\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.CoordinateH\x00\x88\x01\x01\x12/\n\rbuilding_type\x18\x03 \x01(\x0e\x32\x13.city_game.BuildingH\x01\x88\x01\x01\x12,\n\tdirection\x18\x04 \x01(\x0e\x32\x14.city_game.DirectionH\x02\x88\x01\x01\x42\r\n\x0b_coordinateB\x10\n\x0e_building_typeB\x0c\n\n_direction\"\xdc\x01\n\x06\x41\x63tion\x12*\n\x0b\x61\x63tion_type\x18\x01 \x01(\x0e\x32\x15.city_game.ActionType\x12,\n\tdirection\x18\x02 \x01(\x0e\x32\x14.city_game.DirectionH\x00\x88\x01\x01\x12.\n\nCoordinate\x18\x03 \x01(\x0b\x32\x15.city_game.CoordinateH\x01\x88\x01\x01\x12\"\n\x04item\x18\x04 \x01(\x0e\x32\x0f.city_game.ItemH\x02\x88\x01\x01\x42\x0c\n\n_directionB\r\n\x0b_CoordinateB\x07\n\x05_item\"\xaf\x01\n\x11NecromancerAction\x12\x35\n\x0b\x61\x63tion_type\x18\x01 \x01(\x0e\x32 .city_game.NecromancerActionType\x12.\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.CoordinateH\x00\x88\x01\x01\x12\x16\n\thelper_id\x18\x03 \x01(\rH\x01\x88\x01\x01\x42\r\n\x0b_coordinateB\x0c\n\n_helper_id\"\x8f\x01\n\x0bHelperState\x12\x11\n\thelper_id\x18\x01 \x01(\r\x12)\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.Coordinate\x12\x1f\n\x05items\x18\x03 \x03(\x0b\x32\x10.city_game.Stack\x12!\n\x06\x61\x63tion\x18\x04 \x01(\x0b\x32\x11.city_game.Action\"C\n\x0bHelperInput\x12\x11\n\thelper_id\x18\x01 \x01(\r\x12!\n\x06\x61\x63tion\x18\x02 \x01(\x0b\x32\x11.city_game.Action\"^\n\x0c\x45rrorMessage\x12.\n\ncoordinate\x18\x01 \x01(\x0b\x32\x15.city_game.CoordinateH\x00\x88\x01\x01\x12\x0f\n\x07message\x18\x02 \x01(\tB\r\n\x0b_coordinate\"\xc9\x01\n\tGameState\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0c\n\x04mana\x18\x02 \x01(\r\x12\r\n\x05layer\x18\x03 \x01(\r\x12\x31\n\x0f\x62uilding_states\x18\x04 \x03(\x0b\x32\x18.city_game.BuildingState\x12-\n\rhelper_states\x18\x05 \x03(\x0b\x32\x16.city_game.HelperState\x12/\n\x0e\x65rror_messages\x18\x06 \x03(\x0b\x32\x17.city_game.ErrorMessage\"\xb8\x01\n\x0fGameStateUpdate\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0c\n\x04mana\x18\x02 \x01(\r\x12\r\n\x05layer\x18\x03 \x01(\r\x12\x33\n\x10\x62uilding_updates\x18\x04 \x03(\x0b\x32\x19.city_game.BuildingUpdate\x12-\n\rhelper_states\x18\x05 \x03(\x0b\x32\x16.city_game.HelperState\x12\x16\n\x0e\x65rror_messages\x18\x06 \x03(\t\"s\n\tGameInput\x12\x38\n\x12necromancer_action\x18\x01 \x01(\x0b\x32\x1c.city_game.NecromancerAction\x12,\n\x0chelper_input\x18\x02 \x03(\x0b\x32\x16.city_game.HelperInput*n\n\x08\x42uilding\x12\r\n\tWorkbench\x10\x00\x12\x0b\n\x07\x46urnace\x10\x01\x12\n\n\x06Lumber\x10\x02\x12\r\n\tStonepile\x10\x03\x12\x08\n\x04Mine\x10\x04\x12\x0b\n\x07Sandpit\x10\x05\x12\t\n\x05\x43rate\x10\x06\x12\t\n\x05House\x10\x07*\xa4\x01\n\x04Item\x12\x0b\n\x07Pickaxe\x10\x00\x12\n\n\x06\x42ucket\x10\x01\x12\t\n\x05Plank\x10\x02\x12\t\n\x05Stone\x10\x03\x12\x07\n\x03Ore\x10\x04\x12\x0e\n\nSandBucket\x10\x05\x12\t\n\x05Glass\x10\x06\x12\t\n\x05Metal\x10\x07\x12\n\n\x06Window\x10\x08\x12\x08\n\x04\x44oor\x10\t\x12\x0e\n\nIWorkbench\x10\n\x12\x0c\n\x08IFurnace\x10\x0b\x12\n\n\x06ICrate\x10\x0c*\\\n\nActionType\x12\r\n\tA_Nothing\x10\x00\x12\t\n\x05Place\x10\x01\x12\x08\n\x04Give\x10\x02\x12\x08\n\x04Take\x10\x03\x12\x0c\n\x08Interact\x10\x04\x12\x08\n\x04Push\x10\x05\x12\x08\n\x04Walk\x10\x06*?\n\x15NecromancerActionType\x12\r\n\tN_Nothing\x10\x00\x12\n\n\x06Summon\x10\x01\x12\x0b\n\x07Release\x10\x02*2\n\tDirection\x12\x06\n\x02Up\x10\x00\x12\t\n\x05Right\x10\x01\x12\x08\n\x04\x44own\x10\x02\x12\x08\n\x04Left\x10\x03*)\n\x12\x42uildingUpdateType\x12\n\n\x06Remove\x10\x00\x12\x07\n\x03\x41\x64\x64\x10\x01\x42\x12Z\x10../server/src/pbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ity_game_proto.proto\x12\tcity_game\"\"\n\nCoordinate\x12\t\n\x01x\x18\x01 \x01(\r\x12\t\n\x01y\x18\x02 \x01(\r\"8\n\x05Stack\x12 \n\x07item_id\x18\x01 \x01(\x0e\x32\x0f.city_game.Item\x12\r\n\x05\x63ount\x18\x02 \x01(\r\"Q\n\x0fItemRequirement\x12 \n\x07item_id\x18\x01 \x01(\x0e\x32\x0f.city_game.Item\x12\r\n\x05\x63ount\x18\x02 \x01(\r\x12\r\n\x05total\x18\x03 \x01(\r\"^\n\x0c\x45rrorMessage\x12.\n\ncoordinate\x18\x01 \x01(\x0b\x32\x15.city_game.CoordinateH\x00\x88\x01\x01\x12\x0f\n\x07message\x18\x02 \x01(\tB\r\n\x0b_coordinate\"\x96\x01\n\rBuildingState\x12*\n\rbuilding_type\x18\x01 \x01(\x0e\x32\x13.city_game.Building\x12)\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.Coordinate\x12\x1f\n\x05items\x18\x03 \x03(\x0b\x32\x10.city_game.Stack\x12\r\n\x05state\x18\x04 \x01(\r\"\xe2\x01\n\x06\x41\x63tion\x12*\n\x0b\x61\x63tion_type\x18\x01 \x01(\x0e\x32\x15.city_game.ActionType\x12,\n\tdirection\x18\x02 \x01(\x0e\x32\x14.city_game.DirectionH\x00\x88\x01\x01\x12.\n\ncoordinate\x18\x03 \x01(\x0b\x32\x15.city_game.CoordinateH\x01\x88\x01\x01\x12%\n\x07item_id\x18\x04 \x01(\x0e\x32\x0f.city_game.ItemH\x02\x88\x01\x01\x42\x0c\n\n_directionB\r\n\x0b_coordinateB\n\n\x08_item_id\"\xaf\x01\n\x11NecromancerAction\x12\x35\n\x0b\x61\x63tion_type\x18\x01 \x01(\x0e\x32 .city_game.NecromancerActionType\x12.\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.CoordinateH\x00\x88\x01\x01\x12\x16\n\thelper_id\x18\x03 \x01(\rH\x01\x88\x01\x01\x42\r\n\x0b_coordinateB\x0c\n\n_helper_id\"\x8f\x01\n\x0bHelperState\x12\x11\n\thelper_id\x18\x01 \x01(\r\x12)\n\ncoordinate\x18\x02 \x01(\x0b\x32\x15.city_game.Coordinate\x12\x1f\n\x05items\x18\x03 \x03(\x0b\x32\x10.city_game.Stack\x12!\n\x06\x61\x63tion\x18\x04 \x01(\x0b\x32\x11.city_game.Action\"Y\n\x0e\x43raftingRecipe\x12&\n\x0crequirements\x18\x01 \x03(\x0b\x32\x10.city_game.Stack\x12\x1f\n\x06result\x18\x02 \x01(\x0e\x32\x0f.city_game.Item\"C\n\x0bHelperInput\x12\x11\n\thelper_id\x18\x01 \x01(\r\x12!\n\x06\x61\x63tion\x18\x02 \x01(\x0b\x32\x11.city_game.Action\"\x81\x02\n\tGameState\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x0c\n\x04mana\x18\x02 \x01(\r\x12\r\n\x05layer\x18\x03 \x01(\r\x12\x36\n\x12layer_requirements\x18\x04 \x03(\x0b\x32\x1a.city_game.ItemRequirement\x12\x31\n\x0f\x62uilding_states\x18\x05 \x03(\x0b\x32\x18.city_game.BuildingState\x12-\n\rhelper_states\x18\x06 \x03(\x0b\x32\x16.city_game.HelperState\x12/\n\x0e\x65rror_messages\x18\x07 \x03(\x0b\x32\x17.city_game.ErrorMessage\"s\n\tGameInput\x12\x38\n\x12necromancer_action\x18\x01 \x01(\x0b\x32\x1c.city_game.NecromancerAction\x12,\n\x0chelper_input\x18\x02 \x03(\x0b\x32\x16.city_game.HelperInput*n\n\x08\x42uilding\x12\r\n\tWorkbench\x10\x00\x12\x0b\n\x07\x46urnace\x10\x01\x12\n\n\x06Lumber\x10\x02\x12\r\n\tStonepile\x10\x03\x12\x08\n\x04Mine\x10\x04\x12\x0b\n\x07Sandpit\x10\x05\x12\t\n\x05\x43rate\x10\x06\x12\t\n\x05House\x10\x07*\xa4\x01\n\x04Item\x12\x0b\n\x07Pickaxe\x10\x00\x12\n\n\x06\x42ucket\x10\x01\x12\t\n\x05Plank\x10\x02\x12\t\n\x05Stone\x10\x03\x12\x07\n\x03Ore\x10\x04\x12\x0e\n\nSandBucket\x10\x05\x12\t\n\x05Glass\x10\x06\x12\t\n\x05Metal\x10\x07\x12\n\n\x06Window\x10\x08\x12\x08\n\x04\x44oor\x10\t\x12\x0e\n\nIWorkbench\x10\n\x12\x0c\n\x08IFurnace\x10\x0b\x12\n\n\x06ICrate\x10\x0c*\\\n\nActionType\x12\r\n\tA_Nothing\x10\x00\x12\t\n\x05Place\x10\x01\x12\x08\n\x04Give\x10\x02\x12\x08\n\x04Take\x10\x03\x12\x0c\n\x08Interact\x10\x04\x12\x08\n\x04Push\x10\x05\x12\x08\n\x04Walk\x10\x06*?\n\x15NecromancerActionType\x12\r\n\tN_Nothing\x10\x00\x12\n\n\x06Summon\x10\x01\x12\x0b\n\x07Release\x10\x02*2\n\tDirection\x12\x06\n\x02Up\x10\x00\x12\t\n\x05Right\x10\x01\x12\x08\n\x04\x44own\x10\x02\x12\x08\n\x04Left\x10\x03\x42\x12Z\x10../server/src/pbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,40 +32,38 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'city_game_proto_pb2', _glob
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z\020../server/src/pb'
-  _globals['_BUILDING']._serialized_start=1764
-  _globals['_BUILDING']._serialized_end=1874
-  _globals['_ITEM']._serialized_start=1877
-  _globals['_ITEM']._serialized_end=2041
-  _globals['_ACTIONTYPE']._serialized_start=2043
-  _globals['_ACTIONTYPE']._serialized_end=2135
-  _globals['_NECROMANCERACTIONTYPE']._serialized_start=2137
-  _globals['_NECROMANCERACTIONTYPE']._serialized_end=2200
-  _globals['_DIRECTION']._serialized_start=2202
-  _globals['_DIRECTION']._serialized_end=2252
-  _globals['_BUILDINGUPDATETYPE']._serialized_start=2254
-  _globals['_BUILDINGUPDATETYPE']._serialized_end=2295
+  _globals['_BUILDING']._serialized_start=1552
+  _globals['_BUILDING']._serialized_end=1662
+  _globals['_ITEM']._serialized_start=1665
+  _globals['_ITEM']._serialized_end=1829
+  _globals['_ACTIONTYPE']._serialized_start=1831
+  _globals['_ACTIONTYPE']._serialized_end=1923
+  _globals['_NECROMANCERACTIONTYPE']._serialized_start=1925
+  _globals['_NECROMANCERACTIONTYPE']._serialized_end=1988
+  _globals['_DIRECTION']._serialized_start=1990
+  _globals['_DIRECTION']._serialized_end=2040
   _globals['_COORDINATE']._serialized_start=36
   _globals['_COORDINATE']._serialized_end=70
   _globals['_STACK']._serialized_start=72
   _globals['_STACK']._serialized_end=128
-  _globals['_BUILDINGSTATE']._serialized_start=131
-  _globals['_BUILDINGSTATE']._serialized_end=281
-  _globals['_BUILDINGUPDATE']._serialized_start=284
-  _globals['_BUILDINGUPDATE']._serialized_end=542
-  _globals['_ACTION']._serialized_start=545
-  _globals['_ACTION']._serialized_end=765
-  _globals['_NECROMANCERACTION']._serialized_start=768
-  _globals['_NECROMANCERACTION']._serialized_end=943
-  _globals['_HELPERSTATE']._serialized_start=946
-  _globals['_HELPERSTATE']._serialized_end=1089
-  _globals['_HELPERINPUT']._serialized_start=1091
-  _globals['_HELPERINPUT']._serialized_end=1158
-  _globals['_ERRORMESSAGE']._serialized_start=1160
-  _globals['_ERRORMESSAGE']._serialized_end=1254
-  _globals['_GAMESTATE']._serialized_start=1257
-  _globals['_GAMESTATE']._serialized_end=1458
-  _globals['_GAMESTATEUPDATE']._serialized_start=1461
-  _globals['_GAMESTATEUPDATE']._serialized_end=1645
-  _globals['_GAMEINPUT']._serialized_start=1647
-  _globals['_GAMEINPUT']._serialized_end=1762
+  _globals['_ITEMREQUIREMENT']._serialized_start=130
+  _globals['_ITEMREQUIREMENT']._serialized_end=211
+  _globals['_ERRORMESSAGE']._serialized_start=213
+  _globals['_ERRORMESSAGE']._serialized_end=307
+  _globals['_BUILDINGSTATE']._serialized_start=310
+  _globals['_BUILDINGSTATE']._serialized_end=460
+  _globals['_ACTION']._serialized_start=463
+  _globals['_ACTION']._serialized_end=689
+  _globals['_NECROMANCERACTION']._serialized_start=692
+  _globals['_NECROMANCERACTION']._serialized_end=867
+  _globals['_HELPERSTATE']._serialized_start=870
+  _globals['_HELPERSTATE']._serialized_end=1013
+  _globals['_CRAFTINGRECIPE']._serialized_start=1015
+  _globals['_CRAFTINGRECIPE']._serialized_end=1104
+  _globals['_HELPERINPUT']._serialized_start=1106
+  _globals['_HELPERINPUT']._serialized_end=1173
+  _globals['_GAMESTATE']._serialized_start=1176
+  _globals['_GAMESTATE']._serialized_end=1433
+  _globals['_GAMEINPUT']._serialized_start=1435
+  _globals['_GAMEINPUT']._serialized_end=1550
 # @@protoc_insertion_point(module_scope)

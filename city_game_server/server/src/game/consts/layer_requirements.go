@@ -2,20 +2,20 @@ package consts
 
 import (
 	"city_game/src/pb"
-	"sync"
 )
 
-var (
-	layer_requirements           [][]*pb.ItemRequirement
-	init_once_layer_requirements sync.Once
-)
+var layer_requirements [][]*pb.ItemRequirement
 
 func GetLayerRequirements(layer int) []*pb.ItemRequirement {
-	init_once_crafting_recipes.Do(initialize_layers)
+	initialize_layers()
 	return layer_requirements[layer]
 }
 
 func initialize_layers() {
+	if layer_requirements != nil {
+		return
+	}
+
 	layer_requirements = [][]*pb.ItemRequirement{
 		{
 			{

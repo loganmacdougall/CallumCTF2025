@@ -34,70 +34,56 @@ namespace CityGame {
             "bGRpbmdTdGF0ZRIqCg1idWlsZGluZ190eXBlGAEgASgOMhMuY2l0eV9nYW1l",
             "LkJ1aWxkaW5nEikKCmNvb3JkaW5hdGUYAiABKAsyFS5jaXR5X2dhbWUuQ29v",
             "cmRpbmF0ZRIfCgVpdGVtcxgDIAMoCzIQLmNpdHlfZ2FtZS5TdGFjaxINCgVz",
-            "dGF0ZRgEIAEoDSKCAgoOQnVpbGRpbmdVcGRhdGUSMgoLYWN0aW9uX3R5cGUY",
-            "ASABKA4yHS5jaXR5X2dhbWUuQnVpbGRpbmdVcGRhdGVUeXBlEi4KCmNvb3Jk",
-            "aW5hdGUYAiABKAsyFS5jaXR5X2dhbWUuQ29vcmRpbmF0ZUgAiAEBEi8KDWJ1",
-            "aWxkaW5nX3R5cGUYAyABKA4yEy5jaXR5X2dhbWUuQnVpbGRpbmdIAYgBARIs",
-            "CglkaXJlY3Rpb24YBCABKA4yFC5jaXR5X2dhbWUuRGlyZWN0aW9uSAKIAQFC",
-            "DQoLX2Nvb3JkaW5hdGVCEAoOX2J1aWxkaW5nX3R5cGVCDAoKX2RpcmVjdGlv",
-            "biLcAQoGQWN0aW9uEioKC2FjdGlvbl90eXBlGAEgASgOMhUuY2l0eV9nYW1l",
-            "LkFjdGlvblR5cGUSLAoJZGlyZWN0aW9uGAIgASgOMhQuY2l0eV9nYW1lLkRp",
-            "cmVjdGlvbkgAiAEBEi4KCkNvb3JkaW5hdGUYAyABKAsyFS5jaXR5X2dhbWUu",
-            "Q29vcmRpbmF0ZUgBiAEBEiIKBGl0ZW0YBCABKA4yDy5jaXR5X2dhbWUuSXRl",
-            "bUgCiAEBQgwKCl9kaXJlY3Rpb25CDQoLX0Nvb3JkaW5hdGVCBwoFX2l0ZW0i",
-            "rwEKEU5lY3JvbWFuY2VyQWN0aW9uEjUKC2FjdGlvbl90eXBlGAEgASgOMiAu",
-            "Y2l0eV9nYW1lLk5lY3JvbWFuY2VyQWN0aW9uVHlwZRIuCgpjb29yZGluYXRl",
-            "GAIgASgLMhUuY2l0eV9nYW1lLkNvb3JkaW5hdGVIAIgBARIWCgloZWxwZXJf",
-            "aWQYAyABKA1IAYgBAUINCgtfY29vcmRpbmF0ZUIMCgpfaGVscGVyX2lkIo8B",
-            "CgtIZWxwZXJTdGF0ZRIRCgloZWxwZXJfaWQYASABKA0SKQoKY29vcmRpbmF0",
-            "ZRgCIAEoCzIVLmNpdHlfZ2FtZS5Db29yZGluYXRlEh8KBWl0ZW1zGAMgAygL",
-            "MhAuY2l0eV9nYW1lLlN0YWNrEiEKBmFjdGlvbhgEIAEoCzIRLmNpdHlfZ2Ft",
-            "ZS5BY3Rpb24iWQoOQ3JhZnRpbmdSZWNpcGUSJgoMcmVxdWlyZW1lbnRzGAEg",
-            "AygLMhAuY2l0eV9nYW1lLlN0YWNrEh8KBnJlc3VsdBgCIAEoDjIPLmNpdHlf",
-            "Z2FtZS5JdGVtIkMKC0hlbHBlcklucHV0EhEKCWhlbHBlcl9pZBgBIAEoDRIh",
-            "CgZhY3Rpb24YAiABKAsyES5jaXR5X2dhbWUuQWN0aW9uIoECCglHYW1lU3Rh",
-            "dGUSDAoEdGljaxgBIAEoDRIMCgRtYW5hGAIgASgNEg0KBWxheWVyGAMgASgN",
-            "EjYKEmxheWVyX3JlcXVpcmVtZW50cxgEIAMoCzIaLmNpdHlfZ2FtZS5JdGVt",
-            "UmVxdWlyZW1lbnQSMQoPYnVpbGRpbmdfc3RhdGVzGAUgAygLMhguY2l0eV9n",
-            "YW1lLkJ1aWxkaW5nU3RhdGUSLQoNaGVscGVyX3N0YXRlcxgGIAMoCzIWLmNp",
-            "dHlfZ2FtZS5IZWxwZXJTdGF0ZRIvCg5lcnJvcl9tZXNzYWdlcxgHIAMoCzIX",
-            "LmNpdHlfZ2FtZS5FcnJvck1lc3NhZ2Ui0QEKD0dhbWVTdGF0ZVVwZGF0ZRIM",
-            "CgR0aWNrGAEgASgNEgwKBG1hbmEYAiABKA0SDQoFbGF5ZXIYAyABKA0SMwoQ",
-            "YnVpbGRpbmdfdXBkYXRlcxgEIAMoCzIZLmNpdHlfZ2FtZS5CdWlsZGluZ1Vw",
-            "ZGF0ZRItCg1oZWxwZXJfc3RhdGVzGAUgAygLMhYuY2l0eV9nYW1lLkhlbHBl",
-            "clN0YXRlEi8KDmVycm9yX21lc3NhZ2VzGAYgAygLMhcuY2l0eV9nYW1lLkVy",
-            "cm9yTWVzc2FnZSJzCglHYW1lSW5wdXQSOAoSbmVjcm9tYW5jZXJfYWN0aW9u",
-            "GAEgASgLMhwuY2l0eV9nYW1lLk5lY3JvbWFuY2VyQWN0aW9uEiwKDGhlbHBl",
-            "cl9pbnB1dBgCIAMoCzIWLmNpdHlfZ2FtZS5IZWxwZXJJbnB1dCpuCghCdWls",
-            "ZGluZxINCglXb3JrYmVuY2gQABILCgdGdXJuYWNlEAESCgoGTHVtYmVyEAIS",
-            "DQoJU3RvbmVwaWxlEAMSCAoETWluZRAEEgsKB1NhbmRwaXQQBRIJCgVDcmF0",
-            "ZRAGEgkKBUhvdXNlEAcqpAEKBEl0ZW0SCwoHUGlja2F4ZRAAEgoKBkJ1Y2tl",
-            "dBABEgkKBVBsYW5rEAISCQoFU3RvbmUQAxIHCgNPcmUQBBIOCgpTYW5kQnVj",
-            "a2V0EAUSCQoFR2xhc3MQBhIJCgVNZXRhbBAHEgoKBldpbmRvdxAIEggKBERv",
-            "b3IQCRIOCgpJV29ya2JlbmNoEAoSDAoISUZ1cm5hY2UQCxIKCgZJQ3JhdGUQ",
-            "DCpcCgpBY3Rpb25UeXBlEg0KCUFfTm90aGluZxAAEgkKBVBsYWNlEAESCAoE",
-            "R2l2ZRACEggKBFRha2UQAxIMCghJbnRlcmFjdBAEEggKBFB1c2gQBRIICgRX",
-            "YWxrEAYqPwoVTmVjcm9tYW5jZXJBY3Rpb25UeXBlEg0KCU5fTm90aGluZxAA",
-            "EgoKBlN1bW1vbhABEgsKB1JlbGVhc2UQAioyCglEaXJlY3Rpb24SBgoCVXAQ",
-            "ABIJCgVSaWdodBABEggKBERvd24QAhIICgRMZWZ0EAMqKQoSQnVpbGRpbmdV",
-            "cGRhdGVUeXBlEgoKBlJlbW92ZRAAEgcKA0FkZBABQhJaEC4uL3NlcnZlci9z",
-            "cmMvcGJiBnByb3RvMw=="));
+            "dGF0ZRgEIAEoDSLiAQoGQWN0aW9uEioKC2FjdGlvbl90eXBlGAEgASgOMhUu",
+            "Y2l0eV9nYW1lLkFjdGlvblR5cGUSLAoJZGlyZWN0aW9uGAIgASgOMhQuY2l0",
+            "eV9nYW1lLkRpcmVjdGlvbkgAiAEBEi4KCmNvb3JkaW5hdGUYAyABKAsyFS5j",
+            "aXR5X2dhbWUuQ29vcmRpbmF0ZUgBiAEBEiUKB2l0ZW1faWQYBCABKA4yDy5j",
+            "aXR5X2dhbWUuSXRlbUgCiAEBQgwKCl9kaXJlY3Rpb25CDQoLX2Nvb3JkaW5h",
+            "dGVCCgoIX2l0ZW1faWQirwEKEU5lY3JvbWFuY2VyQWN0aW9uEjUKC2FjdGlv",
+            "bl90eXBlGAEgASgOMiAuY2l0eV9nYW1lLk5lY3JvbWFuY2VyQWN0aW9uVHlw",
+            "ZRIuCgpjb29yZGluYXRlGAIgASgLMhUuY2l0eV9nYW1lLkNvb3JkaW5hdGVI",
+            "AIgBARIWCgloZWxwZXJfaWQYAyABKA1IAYgBAUINCgtfY29vcmRpbmF0ZUIM",
+            "CgpfaGVscGVyX2lkIo8BCgtIZWxwZXJTdGF0ZRIRCgloZWxwZXJfaWQYASAB",
+            "KA0SKQoKY29vcmRpbmF0ZRgCIAEoCzIVLmNpdHlfZ2FtZS5Db29yZGluYXRl",
+            "Eh8KBWl0ZW1zGAMgAygLMhAuY2l0eV9nYW1lLlN0YWNrEiEKBmFjdGlvbhgE",
+            "IAEoCzIRLmNpdHlfZ2FtZS5BY3Rpb24iWQoOQ3JhZnRpbmdSZWNpcGUSJgoM",
+            "cmVxdWlyZW1lbnRzGAEgAygLMhAuY2l0eV9nYW1lLlN0YWNrEh8KBnJlc3Vs",
+            "dBgCIAEoDjIPLmNpdHlfZ2FtZS5JdGVtIkMKC0hlbHBlcklucHV0EhEKCWhl",
+            "bHBlcl9pZBgBIAEoDRIhCgZhY3Rpb24YAiABKAsyES5jaXR5X2dhbWUuQWN0",
+            "aW9uIoECCglHYW1lU3RhdGUSDAoEdGljaxgBIAEoDRIMCgRtYW5hGAIgASgN",
+            "Eg0KBWxheWVyGAMgASgNEjYKEmxheWVyX3JlcXVpcmVtZW50cxgEIAMoCzIa",
+            "LmNpdHlfZ2FtZS5JdGVtUmVxdWlyZW1lbnQSMQoPYnVpbGRpbmdfc3RhdGVz",
+            "GAUgAygLMhguY2l0eV9nYW1lLkJ1aWxkaW5nU3RhdGUSLQoNaGVscGVyX3N0",
+            "YXRlcxgGIAMoCzIWLmNpdHlfZ2FtZS5IZWxwZXJTdGF0ZRIvCg5lcnJvcl9t",
+            "ZXNzYWdlcxgHIAMoCzIXLmNpdHlfZ2FtZS5FcnJvck1lc3NhZ2UicwoJR2Ft",
+            "ZUlucHV0EjgKEm5lY3JvbWFuY2VyX2FjdGlvbhgBIAEoCzIcLmNpdHlfZ2Ft",
+            "ZS5OZWNyb21hbmNlckFjdGlvbhIsCgxoZWxwZXJfaW5wdXQYAiADKAsyFi5j",
+            "aXR5X2dhbWUuSGVscGVySW5wdXQqbgoIQnVpbGRpbmcSDQoJV29ya2JlbmNo",
+            "EAASCwoHRnVybmFjZRABEgoKBkx1bWJlchACEg0KCVN0b25lcGlsZRADEggK",
+            "BE1pbmUQBBILCgdTYW5kcGl0EAUSCQoFQ3JhdGUQBhIJCgVIb3VzZRAHKqQB",
+            "CgRJdGVtEgsKB1BpY2theGUQABIKCgZCdWNrZXQQARIJCgVQbGFuaxACEgkK",
+            "BVN0b25lEAMSBwoDT3JlEAQSDgoKU2FuZEJ1Y2tldBAFEgkKBUdsYXNzEAYS",
+            "CQoFTWV0YWwQBxIKCgZXaW5kb3cQCBIICgREb29yEAkSDgoKSVdvcmtiZW5j",
+            "aBAKEgwKCElGdXJuYWNlEAsSCgoGSUNyYXRlEAwqXAoKQWN0aW9uVHlwZRIN",
+            "CglBX05vdGhpbmcQABIJCgVQbGFjZRABEggKBEdpdmUQAhIICgRUYWtlEAMS",
+            "DAoISW50ZXJhY3QQBBIICgRQdXNoEAUSCAoEV2FsaxAGKj8KFU5lY3JvbWFu",
+            "Y2VyQWN0aW9uVHlwZRINCglOX05vdGhpbmcQABIKCgZTdW1tb24QARILCgdS",
+            "ZWxlYXNlEAIqMgoJRGlyZWN0aW9uEgYKAlVwEAASCQoFUmlnaHQQARIICgRE",
+            "b3duEAISCAoETGVmdBADQhJaEC4uL3NlcnZlci9zcmMvcGJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CityGame.Building), typeof(global::CityGame.Item), typeof(global::CityGame.ActionType), typeof(global::CityGame.NecromancerActionType), typeof(global::CityGame.Direction), typeof(global::CityGame.BuildingUpdateType), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CityGame.Building), typeof(global::CityGame.Item), typeof(global::CityGame.ActionType), typeof(global::CityGame.NecromancerActionType), typeof(global::CityGame.Direction), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.Coordinate), global::CityGame.Coordinate.Parser, new[]{ "X", "Y" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.Stack), global::CityGame.Stack.Parser, new[]{ "ItemId", "Count" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.ItemRequirement), global::CityGame.ItemRequirement.Parser, new[]{ "ItemId", "Count", "Total" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.ErrorMessage), global::CityGame.ErrorMessage.Parser, new[]{ "Coordinate", "Message" }, new[]{ "Coordinate" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.BuildingState), global::CityGame.BuildingState.Parser, new[]{ "BuildingType", "Coordinate", "Items", "State" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.BuildingUpdate), global::CityGame.BuildingUpdate.Parser, new[]{ "ActionType", "Coordinate", "BuildingType", "Direction" }, new[]{ "Coordinate", "BuildingType", "Direction" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.Action), global::CityGame.Action.Parser, new[]{ "ActionType", "Direction", "Coordinate", "Item" }, new[]{ "Direction", "Coordinate", "Item" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.Action), global::CityGame.Action.Parser, new[]{ "ActionType", "Direction", "Coordinate", "ItemId" }, new[]{ "Direction", "Coordinate", "ItemId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.NecromancerAction), global::CityGame.NecromancerAction.Parser, new[]{ "ActionType", "Coordinate", "HelperId" }, new[]{ "Coordinate", "HelperId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.HelperState), global::CityGame.HelperState.Parser, new[]{ "HelperId", "Coordinate", "Items", "Action" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.CraftingRecipe), global::CityGame.CraftingRecipe.Parser, new[]{ "Requirements", "Result" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.HelperInput), global::CityGame.HelperInput.Parser, new[]{ "HelperId", "Action" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.GameState), global::CityGame.GameState.Parser, new[]{ "Tick", "Mana", "Layer", "LayerRequirements", "BuildingStates", "HelperStates", "ErrorMessages" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.GameStateUpdate), global::CityGame.GameStateUpdate.Parser, new[]{ "Tick", "Mana", "Layer", "BuildingUpdates", "HelperStates", "ErrorMessages" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.GameInput), global::CityGame.GameInput.Parser, new[]{ "NecromancerAction", "HelperInput" }, null, null, null, null)
           }));
     }
@@ -159,11 +145,6 @@ namespace CityGame {
     [pbr::OriginalName("Right")] Right = 1,
     [pbr::OriginalName("Down")] Down = 2,
     [pbr::OriginalName("Left")] Left = 3,
-  }
-
-  public enum BuildingUpdateType {
-    [pbr::OriginalName("Remove")] Remove = 0,
-    [pbr::OriginalName("Add")] Add = 1,
   }
 
   #endregion
@@ -1469,356 +1450,6 @@ namespace CityGame {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class BuildingUpdate : pb::IMessage<BuildingUpdate>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<BuildingUpdate> _parser = new pb::MessageParser<BuildingUpdate>(() => new BuildingUpdate());
-    private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<BuildingUpdate> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public BuildingUpdate() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public BuildingUpdate(BuildingUpdate other) : this() {
-      _hasBits0 = other._hasBits0;
-      actionType_ = other.actionType_;
-      coordinate_ = other.coordinate_ != null ? other.coordinate_.Clone() : null;
-      buildingType_ = other.buildingType_;
-      direction_ = other.direction_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public BuildingUpdate Clone() {
-      return new BuildingUpdate(this);
-    }
-
-    /// <summary>Field number for the "action_type" field.</summary>
-    public const int ActionTypeFieldNumber = 1;
-    private global::CityGame.BuildingUpdateType actionType_ = global::CityGame.BuildingUpdateType.Remove;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::CityGame.BuildingUpdateType ActionType {
-      get { return actionType_; }
-      set {
-        actionType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "coordinate" field.</summary>
-    public const int CoordinateFieldNumber = 2;
-    private global::CityGame.Coordinate coordinate_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::CityGame.Coordinate Coordinate {
-      get { return coordinate_; }
-      set {
-        coordinate_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "building_type" field.</summary>
-    public const int BuildingTypeFieldNumber = 3;
-    private readonly static global::CityGame.Building BuildingTypeDefaultValue = global::CityGame.Building.Workbench;
-
-    private global::CityGame.Building buildingType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::CityGame.Building BuildingType {
-      get { if ((_hasBits0 & 1) != 0) { return buildingType_; } else { return BuildingTypeDefaultValue; } }
-      set {
-        _hasBits0 |= 1;
-        buildingType_ = value;
-      }
-    }
-    /// <summary>Gets whether the "building_type" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasBuildingType {
-      get { return (_hasBits0 & 1) != 0; }
-    }
-    /// <summary>Clears the value of the "building_type" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearBuildingType() {
-      _hasBits0 &= ~1;
-    }
-
-    /// <summary>Field number for the "direction" field.</summary>
-    public const int DirectionFieldNumber = 4;
-    private readonly static global::CityGame.Direction DirectionDefaultValue = global::CityGame.Direction.Up;
-
-    private global::CityGame.Direction direction_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::CityGame.Direction Direction {
-      get { if ((_hasBits0 & 2) != 0) { return direction_; } else { return DirectionDefaultValue; } }
-      set {
-        _hasBits0 |= 2;
-        direction_ = value;
-      }
-    }
-    /// <summary>Gets whether the "direction" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasDirection {
-      get { return (_hasBits0 & 2) != 0; }
-    }
-    /// <summary>Clears the value of the "direction" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearDirection() {
-      _hasBits0 &= ~2;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as BuildingUpdate);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(BuildingUpdate other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ActionType != other.ActionType) return false;
-      if (!object.Equals(Coordinate, other.Coordinate)) return false;
-      if (BuildingType != other.BuildingType) return false;
-      if (Direction != other.Direction) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ActionType != global::CityGame.BuildingUpdateType.Remove) hash ^= ActionType.GetHashCode();
-      if (coordinate_ != null) hash ^= Coordinate.GetHashCode();
-      if (HasBuildingType) hash ^= BuildingType.GetHashCode();
-      if (HasDirection) hash ^= Direction.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (ActionType != global::CityGame.BuildingUpdateType.Remove) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) ActionType);
-      }
-      if (coordinate_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Coordinate);
-      }
-      if (HasBuildingType) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) BuildingType);
-      }
-      if (HasDirection) {
-        output.WriteRawTag(32);
-        output.WriteEnum((int) Direction);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ActionType != global::CityGame.BuildingUpdateType.Remove) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) ActionType);
-      }
-      if (coordinate_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Coordinate);
-      }
-      if (HasBuildingType) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) BuildingType);
-      }
-      if (HasDirection) {
-        output.WriteRawTag(32);
-        output.WriteEnum((int) Direction);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (ActionType != global::CityGame.BuildingUpdateType.Remove) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ActionType);
-      }
-      if (coordinate_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Coordinate);
-      }
-      if (HasBuildingType) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BuildingType);
-      }
-      if (HasDirection) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Direction);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(BuildingUpdate other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ActionType != global::CityGame.BuildingUpdateType.Remove) {
-        ActionType = other.ActionType;
-      }
-      if (other.coordinate_ != null) {
-        if (coordinate_ == null) {
-          Coordinate = new global::CityGame.Coordinate();
-        }
-        Coordinate.MergeFrom(other.Coordinate);
-      }
-      if (other.HasBuildingType) {
-        BuildingType = other.BuildingType;
-      }
-      if (other.HasDirection) {
-        Direction = other.Direction;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            ActionType = (global::CityGame.BuildingUpdateType) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            if (coordinate_ == null) {
-              Coordinate = new global::CityGame.Coordinate();
-            }
-            input.ReadMessage(Coordinate);
-            break;
-          }
-          case 24: {
-            BuildingType = (global::CityGame.Building) input.ReadEnum();
-            break;
-          }
-          case 32: {
-            Direction = (global::CityGame.Direction) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            ActionType = (global::CityGame.BuildingUpdateType) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            if (coordinate_ == null) {
-              Coordinate = new global::CityGame.Coordinate();
-            }
-            input.ReadMessage(Coordinate);
-            break;
-          }
-          case 24: {
-            BuildingType = (global::CityGame.Building) input.ReadEnum();
-            break;
-          }
-          case 32: {
-            Direction = (global::CityGame.Direction) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Action : pb::IMessage<Action>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1834,7 +1465,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[6]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1858,7 +1489,7 @@ namespace CityGame {
       actionType_ = other.actionType_;
       direction_ = other.direction_;
       coordinate_ = other.coordinate_ != null ? other.coordinate_.Clone() : null;
-      item_ = other.item_;
+      itemId_ = other.itemId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1907,7 +1538,7 @@ namespace CityGame {
       _hasBits0 &= ~1;
     }
 
-    /// <summary>Field number for the "Coordinate" field.</summary>
+    /// <summary>Field number for the "coordinate" field.</summary>
     public const int CoordinateFieldNumber = 3;
     private global::CityGame.Coordinate coordinate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1919,30 +1550,30 @@ namespace CityGame {
       }
     }
 
-    /// <summary>Field number for the "item" field.</summary>
-    public const int ItemFieldNumber = 4;
-    private readonly static global::CityGame.Item ItemDefaultValue = global::CityGame.Item.Pickaxe;
+    /// <summary>Field number for the "item_id" field.</summary>
+    public const int ItemIdFieldNumber = 4;
+    private readonly static global::CityGame.Item ItemIdDefaultValue = global::CityGame.Item.Pickaxe;
 
-    private global::CityGame.Item item_;
+    private global::CityGame.Item itemId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::CityGame.Item Item {
-      get { if ((_hasBits0 & 2) != 0) { return item_; } else { return ItemDefaultValue; } }
+    public global::CityGame.Item ItemId {
+      get { if ((_hasBits0 & 2) != 0) { return itemId_; } else { return ItemIdDefaultValue; } }
       set {
         _hasBits0 |= 2;
-        item_ = value;
+        itemId_ = value;
       }
     }
-    /// <summary>Gets whether the "item" field is set</summary>
+    /// <summary>Gets whether the "item_id" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasItem {
+    public bool HasItemId {
       get { return (_hasBits0 & 2) != 0; }
     }
-    /// <summary>Clears the value of the "item" field</summary>
+    /// <summary>Clears the value of the "item_id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearItem() {
+    public void ClearItemId() {
       _hasBits0 &= ~2;
     }
 
@@ -1964,7 +1595,7 @@ namespace CityGame {
       if (ActionType != other.ActionType) return false;
       if (Direction != other.Direction) return false;
       if (!object.Equals(Coordinate, other.Coordinate)) return false;
-      if (Item != other.Item) return false;
+      if (ItemId != other.ItemId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1975,7 +1606,7 @@ namespace CityGame {
       if (ActionType != global::CityGame.ActionType.ANothing) hash ^= ActionType.GetHashCode();
       if (HasDirection) hash ^= Direction.GetHashCode();
       if (coordinate_ != null) hash ^= Coordinate.GetHashCode();
-      if (HasItem) hash ^= Item.GetHashCode();
+      if (HasItemId) hash ^= ItemId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2006,9 +1637,9 @@ namespace CityGame {
         output.WriteRawTag(26);
         output.WriteMessage(Coordinate);
       }
-      if (HasItem) {
+      if (HasItemId) {
         output.WriteRawTag(32);
-        output.WriteEnum((int) Item);
+        output.WriteEnum((int) ItemId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2032,9 +1663,9 @@ namespace CityGame {
         output.WriteRawTag(26);
         output.WriteMessage(Coordinate);
       }
-      if (HasItem) {
+      if (HasItemId) {
         output.WriteRawTag(32);
-        output.WriteEnum((int) Item);
+        output.WriteEnum((int) ItemId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2055,8 +1686,8 @@ namespace CityGame {
       if (coordinate_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Coordinate);
       }
-      if (HasItem) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Item);
+      if (HasItemId) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ItemId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2082,8 +1713,8 @@ namespace CityGame {
         }
         Coordinate.MergeFrom(other.Coordinate);
       }
-      if (other.HasItem) {
-        Item = other.Item;
+      if (other.HasItemId) {
+        ItemId = other.ItemId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2120,7 +1751,7 @@ namespace CityGame {
             break;
           }
           case 32: {
-            Item = (global::CityGame.Item) input.ReadEnum();
+            ItemId = (global::CityGame.Item) input.ReadEnum();
             break;
           }
         }
@@ -2158,7 +1789,7 @@ namespace CityGame {
             break;
           }
           case 32: {
-            Item = (global::CityGame.Item) input.ReadEnum();
+            ItemId = (global::CityGame.Item) input.ReadEnum();
             break;
           }
         }
@@ -2184,7 +1815,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[7]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2481,7 +2112,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[8]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2797,7 +2428,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[9]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3021,7 +2652,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[10]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3265,7 +2896,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[11]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3627,356 +3258,6 @@ namespace CityGame {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class GameStateUpdate : pb::IMessage<GameStateUpdate>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<GameStateUpdate> _parser = new pb::MessageParser<GameStateUpdate>(() => new GameStateUpdate());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<GameStateUpdate> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[12]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GameStateUpdate() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GameStateUpdate(GameStateUpdate other) : this() {
-      tick_ = other.tick_;
-      mana_ = other.mana_;
-      layer_ = other.layer_;
-      buildingUpdates_ = other.buildingUpdates_.Clone();
-      helperStates_ = other.helperStates_.Clone();
-      errorMessages_ = other.errorMessages_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GameStateUpdate Clone() {
-      return new GameStateUpdate(this);
-    }
-
-    /// <summary>Field number for the "tick" field.</summary>
-    public const int TickFieldNumber = 1;
-    private uint tick_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Tick {
-      get { return tick_; }
-      set {
-        tick_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "mana" field.</summary>
-    public const int ManaFieldNumber = 2;
-    private uint mana_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Mana {
-      get { return mana_; }
-      set {
-        mana_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "layer" field.</summary>
-    public const int LayerFieldNumber = 3;
-    private uint layer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Layer {
-      get { return layer_; }
-      set {
-        layer_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "building_updates" field.</summary>
-    public const int BuildingUpdatesFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::CityGame.BuildingUpdate> _repeated_buildingUpdates_codec
-        = pb::FieldCodec.ForMessage(34, global::CityGame.BuildingUpdate.Parser);
-    private readonly pbc::RepeatedField<global::CityGame.BuildingUpdate> buildingUpdates_ = new pbc::RepeatedField<global::CityGame.BuildingUpdate>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::CityGame.BuildingUpdate> BuildingUpdates {
-      get { return buildingUpdates_; }
-    }
-
-    /// <summary>Field number for the "helper_states" field.</summary>
-    public const int HelperStatesFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::CityGame.HelperState> _repeated_helperStates_codec
-        = pb::FieldCodec.ForMessage(42, global::CityGame.HelperState.Parser);
-    private readonly pbc::RepeatedField<global::CityGame.HelperState> helperStates_ = new pbc::RepeatedField<global::CityGame.HelperState>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::CityGame.HelperState> HelperStates {
-      get { return helperStates_; }
-    }
-
-    /// <summary>Field number for the "error_messages" field.</summary>
-    public const int ErrorMessagesFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::CityGame.ErrorMessage> _repeated_errorMessages_codec
-        = pb::FieldCodec.ForMessage(50, global::CityGame.ErrorMessage.Parser);
-    private readonly pbc::RepeatedField<global::CityGame.ErrorMessage> errorMessages_ = new pbc::RepeatedField<global::CityGame.ErrorMessage>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::CityGame.ErrorMessage> ErrorMessages {
-      get { return errorMessages_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as GameStateUpdate);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(GameStateUpdate other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Tick != other.Tick) return false;
-      if (Mana != other.Mana) return false;
-      if (Layer != other.Layer) return false;
-      if(!buildingUpdates_.Equals(other.buildingUpdates_)) return false;
-      if(!helperStates_.Equals(other.helperStates_)) return false;
-      if(!errorMessages_.Equals(other.errorMessages_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Tick != 0) hash ^= Tick.GetHashCode();
-      if (Mana != 0) hash ^= Mana.GetHashCode();
-      if (Layer != 0) hash ^= Layer.GetHashCode();
-      hash ^= buildingUpdates_.GetHashCode();
-      hash ^= helperStates_.GetHashCode();
-      hash ^= errorMessages_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (Tick != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Tick);
-      }
-      if (Mana != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Mana);
-      }
-      if (Layer != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Layer);
-      }
-      buildingUpdates_.WriteTo(output, _repeated_buildingUpdates_codec);
-      helperStates_.WriteTo(output, _repeated_helperStates_codec);
-      errorMessages_.WriteTo(output, _repeated_errorMessages_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Tick != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Tick);
-      }
-      if (Mana != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Mana);
-      }
-      if (Layer != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Layer);
-      }
-      buildingUpdates_.WriteTo(ref output, _repeated_buildingUpdates_codec);
-      helperStates_.WriteTo(ref output, _repeated_helperStates_codec);
-      errorMessages_.WriteTo(ref output, _repeated_errorMessages_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (Tick != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Tick);
-      }
-      if (Mana != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Mana);
-      }
-      if (Layer != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Layer);
-      }
-      size += buildingUpdates_.CalculateSize(_repeated_buildingUpdates_codec);
-      size += helperStates_.CalculateSize(_repeated_helperStates_codec);
-      size += errorMessages_.CalculateSize(_repeated_errorMessages_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(GameStateUpdate other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Tick != 0) {
-        Tick = other.Tick;
-      }
-      if (other.Mana != 0) {
-        Mana = other.Mana;
-      }
-      if (other.Layer != 0) {
-        Layer = other.Layer;
-      }
-      buildingUpdates_.Add(other.buildingUpdates_);
-      helperStates_.Add(other.helperStates_);
-      errorMessages_.Add(other.errorMessages_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            Tick = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            Mana = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            Layer = input.ReadUInt32();
-            break;
-          }
-          case 34: {
-            buildingUpdates_.AddEntriesFrom(input, _repeated_buildingUpdates_codec);
-            break;
-          }
-          case 42: {
-            helperStates_.AddEntriesFrom(input, _repeated_helperStates_codec);
-            break;
-          }
-          case 50: {
-            errorMessages_.AddEntriesFrom(input, _repeated_errorMessages_codec);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-      if ((tag & 7) == 4) {
-        // Abort on any end group tag.
-        return;
-      }
-      switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            Tick = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            Mana = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            Layer = input.ReadUInt32();
-            break;
-          }
-          case 34: {
-            buildingUpdates_.AddEntriesFrom(ref input, _repeated_buildingUpdates_codec);
-            break;
-          }
-          case 42: {
-            helperStates_.AddEntriesFrom(ref input, _repeated_helperStates_codec);
-            break;
-          }
-          case 50: {
-            errorMessages_.AddEntriesFrom(ref input, _repeated_errorMessages_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class GameInput : pb::IMessage<GameInput>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3991,7 +3272,7 @@ namespace CityGame {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[13]; }
+      get { return global::CityGame.CityGameProtoReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -55,11 +55,6 @@ enum Direction {
   Left = 3;
 }
 
-enum BuildingUpdateType {
-  Remove = 0;
-  Add = 1;
-}
-
 /////////////////// Support Messages ///////////////////
 message Coordinate {
   uint32 x = 1;
@@ -90,18 +85,11 @@ message BuildingState {
   uint32 state = 4;
 }
 
-message BuildingUpdate {
-  BuildingUpdateType action_type = 1;
-  optional Coordinate coordinate = 2;
-  optional Building building_type = 3;
-  optional Direction direction = 4;
-}
-
 message Action {
   ActionType action_type = 1;
   optional Direction direction = 2;
-  optional Coordinate Coordinate = 3;
-  optional Item item = 4;
+  optional Coordinate coordinate = 3;
+  optional Item item_id = 4;
 }
 
 message NecromancerAction {
@@ -135,15 +123,6 @@ message GameState {
   repeated BuildingState building_states = 5;
   repeated HelperState helper_states = 6;
   repeated ErrorMessage error_messages = 7;
-}
-
-message GameStateUpdate {
-  uint32 tick = 1;
-  uint32 mana = 2;
-  uint32 layer = 3;
-  repeated BuildingUpdate building_updates = 4;
-  repeated HelperState helper_states = 5;
-  repeated ErrorMessage error_messages = 6;
 }
 
 message GameInput {
