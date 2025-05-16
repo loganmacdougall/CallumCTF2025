@@ -923,6 +923,7 @@ type GameState struct {
 	BuildingStates    []*BuildingState       `protobuf:"bytes,5,rep,name=building_states,json=buildingStates,proto3" json:"building_states,omitempty"`
 	HelperStates      []*HelperState         `protobuf:"bytes,6,rep,name=helper_states,json=helperStates,proto3" json:"helper_states,omitempty"`
 	ErrorMessages     []*ErrorMessage        `protobuf:"bytes,7,rep,name=error_messages,json=errorMessages,proto3" json:"error_messages,omitempty"`
+	Uuid              string                 `protobuf:"bytes,8,opt,name=uuid,proto3" json:"uuid,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1004,6 +1005,13 @@ func (x *GameState) GetErrorMessages() []*ErrorMessage {
 		return x.ErrorMessages
 	}
 	return nil
+}
+
+func (x *GameState) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
 }
 
 type GameInput struct {
@@ -1122,7 +1130,7 @@ const file_city_game_proto_proto_rawDesc = "" +
 	"\x06result\x18\x02 \x01(\x0e2\x0f.city_game.ItemR\x06result\"U\n" +
 	"\vHelperInput\x12\x1b\n" +
 	"\thelper_id\x18\x01 \x01(\rR\bhelperId\x12)\n" +
-	"\x06action\x18\x02 \x01(\v2\x11.city_game.ActionR\x06action\"\xd4\x02\n" +
+	"\x06action\x18\x02 \x01(\v2\x11.city_game.ActionR\x06action\"\xe8\x02\n" +
 	"\tGameState\x12\x12\n" +
 	"\x04tick\x18\x01 \x01(\rR\x04tick\x12\x12\n" +
 	"\x04mana\x18\x02 \x01(\rR\x04mana\x12\x14\n" +
@@ -1130,7 +1138,8 @@ const file_city_game_proto_proto_rawDesc = "" +
 	"\x12layer_requirements\x18\x04 \x03(\v2\x1a.city_game.ItemRequirementR\x11layerRequirements\x12A\n" +
 	"\x0fbuilding_states\x18\x05 \x03(\v2\x18.city_game.BuildingStateR\x0ebuildingStates\x12;\n" +
 	"\rhelper_states\x18\x06 \x03(\v2\x16.city_game.HelperStateR\fhelperStates\x12>\n" +
-	"\x0eerror_messages\x18\a \x03(\v2\x17.city_game.ErrorMessageR\rerrorMessages\"\x93\x01\n" +
+	"\x0eerror_messages\x18\a \x03(\v2\x17.city_game.ErrorMessageR\rerrorMessages\x12\x12\n" +
+	"\x04uuid\x18\b \x01(\tR\x04uuid\"\x93\x01\n" +
 	"\tGameInput\x12K\n" +
 	"\x12necromancer_action\x18\x01 \x01(\v2\x1c.city_game.NecromancerActionR\x11necromancerAction\x129\n" +
 	"\fhelper_input\x18\x02 \x03(\v2\x16.city_game.HelperInputR\vhelperInput*n\n" +

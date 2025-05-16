@@ -123,6 +123,7 @@ message GameState {
   repeated BuildingState building_states = 5;
   repeated HelperState helper_states = 6;
   repeated ErrorMessage error_messages = 7;
+  string uuid = 8;
 }
 
 message GameInput {

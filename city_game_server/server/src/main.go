@@ -11,6 +11,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/google/uuid"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -29,6 +30,8 @@ func start_game(init_conn net.Conn, port int) {
 	fmt.Println("Connected to client server")
 
 	state := game.CreateInitialState()
+	state.Uuid = uuid.NewString()
+
 	input := &pb.GameInput{}
 
 	for range 5 {

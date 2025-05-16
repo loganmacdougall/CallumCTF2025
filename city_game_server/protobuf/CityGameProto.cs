@@ -50,26 +50,27 @@ namespace CityGame {
             "cmVxdWlyZW1lbnRzGAEgAygLMhAuY2l0eV9nYW1lLlN0YWNrEh8KBnJlc3Vs",
             "dBgCIAEoDjIPLmNpdHlfZ2FtZS5JdGVtIkMKC0hlbHBlcklucHV0EhEKCWhl",
             "bHBlcl9pZBgBIAEoDRIhCgZhY3Rpb24YAiABKAsyES5jaXR5X2dhbWUuQWN0",
-            "aW9uIoECCglHYW1lU3RhdGUSDAoEdGljaxgBIAEoDRIMCgRtYW5hGAIgASgN",
+            "aW9uIo8CCglHYW1lU3RhdGUSDAoEdGljaxgBIAEoDRIMCgRtYW5hGAIgASgN",
             "Eg0KBWxheWVyGAMgASgNEjYKEmxheWVyX3JlcXVpcmVtZW50cxgEIAMoCzIa",
             "LmNpdHlfZ2FtZS5JdGVtUmVxdWlyZW1lbnQSMQoPYnVpbGRpbmdfc3RhdGVz",
             "GAUgAygLMhguY2l0eV9nYW1lLkJ1aWxkaW5nU3RhdGUSLQoNaGVscGVyX3N0",
             "YXRlcxgGIAMoCzIWLmNpdHlfZ2FtZS5IZWxwZXJTdGF0ZRIvCg5lcnJvcl9t",
-            "ZXNzYWdlcxgHIAMoCzIXLmNpdHlfZ2FtZS5FcnJvck1lc3NhZ2UicwoJR2Ft",
-            "ZUlucHV0EjgKEm5lY3JvbWFuY2VyX2FjdGlvbhgBIAEoCzIcLmNpdHlfZ2Ft",
-            "ZS5OZWNyb21hbmNlckFjdGlvbhIsCgxoZWxwZXJfaW5wdXQYAiADKAsyFi5j",
-            "aXR5X2dhbWUuSGVscGVySW5wdXQqbgoIQnVpbGRpbmcSDQoJV29ya2JlbmNo",
-            "EAASCwoHRnVybmFjZRABEgoKBkx1bWJlchACEg0KCVN0b25lcGlsZRADEggK",
-            "BE1pbmUQBBILCgdTYW5kcGl0EAUSCQoFQ3JhdGUQBhIJCgVIb3VzZRAHKqQB",
-            "CgRJdGVtEgsKB1BpY2theGUQABIKCgZCdWNrZXQQARIJCgVQbGFuaxACEgkK",
-            "BVN0b25lEAMSBwoDT3JlEAQSDgoKU2FuZEJ1Y2tldBAFEgkKBUdsYXNzEAYS",
-            "CQoFTWV0YWwQBxIKCgZXaW5kb3cQCBIICgREb29yEAkSDgoKSVdvcmtiZW5j",
-            "aBAKEgwKCElGdXJuYWNlEAsSCgoGSUNyYXRlEAwqXAoKQWN0aW9uVHlwZRIN",
-            "CglBX05vdGhpbmcQABIJCgVQbGFjZRABEggKBEdpdmUQAhIICgRUYWtlEAMS",
-            "DAoISW50ZXJhY3QQBBIICgRQdXNoEAUSCAoEV2FsaxAGKj8KFU5lY3JvbWFu",
-            "Y2VyQWN0aW9uVHlwZRINCglOX05vdGhpbmcQABIKCgZTdW1tb24QARILCgdS",
-            "ZWxlYXNlEAIqMgoJRGlyZWN0aW9uEgYKAlVwEAASCQoFUmlnaHQQARIICgRE",
-            "b3duEAISCAoETGVmdBADQhJaEC4uL3NlcnZlci9zcmMvcGJiBnByb3RvMw=="));
+            "ZXNzYWdlcxgHIAMoCzIXLmNpdHlfZ2FtZS5FcnJvck1lc3NhZ2USDAoEdXVp",
+            "ZBgIIAEoCSJzCglHYW1lSW5wdXQSOAoSbmVjcm9tYW5jZXJfYWN0aW9uGAEg",
+            "ASgLMhwuY2l0eV9nYW1lLk5lY3JvbWFuY2VyQWN0aW9uEiwKDGhlbHBlcl9p",
+            "bnB1dBgCIAMoCzIWLmNpdHlfZ2FtZS5IZWxwZXJJbnB1dCpuCghCdWlsZGlu",
+            "ZxINCglXb3JrYmVuY2gQABILCgdGdXJuYWNlEAESCgoGTHVtYmVyEAISDQoJ",
+            "U3RvbmVwaWxlEAMSCAoETWluZRAEEgsKB1NhbmRwaXQQBRIJCgVDcmF0ZRAG",
+            "EgkKBUhvdXNlEAcqpAEKBEl0ZW0SCwoHUGlja2F4ZRAAEgoKBkJ1Y2tldBAB",
+            "EgkKBVBsYW5rEAISCQoFU3RvbmUQAxIHCgNPcmUQBBIOCgpTYW5kQnVja2V0",
+            "EAUSCQoFR2xhc3MQBhIJCgVNZXRhbBAHEgoKBldpbmRvdxAIEggKBERvb3IQ",
+            "CRIOCgpJV29ya2JlbmNoEAoSDAoISUZ1cm5hY2UQCxIKCgZJQ3JhdGUQDCpc",
+            "CgpBY3Rpb25UeXBlEg0KCUFfTm90aGluZxAAEgkKBVBsYWNlEAESCAoER2l2",
+            "ZRACEggKBFRha2UQAxIMCghJbnRlcmFjdBAEEggKBFB1c2gQBRIICgRXYWxr",
+            "EAYqPwoVTmVjcm9tYW5jZXJBY3Rpb25UeXBlEg0KCU5fTm90aGluZxAAEgoK",
+            "BlN1bW1vbhABEgsKB1JlbGVhc2UQAioyCglEaXJlY3Rpb24SBgoCVXAQABIJ",
+            "CgVSaWdodBABEggKBERvd24QAhIICgRMZWZ0EANCEloQLi4vc2VydmVyL3Ny",
+            "Yy9wYmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CityGame.Building), typeof(global::CityGame.Item), typeof(global::CityGame.ActionType), typeof(global::CityGame.NecromancerActionType), typeof(global::CityGame.Direction), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +84,7 @@ namespace CityGame {
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.HelperState), global::CityGame.HelperState.Parser, new[]{ "HelperId", "Coordinate", "Items", "Action" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.CraftingRecipe), global::CityGame.CraftingRecipe.Parser, new[]{ "Requirements", "Result" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.HelperInput), global::CityGame.HelperInput.Parser, new[]{ "HelperId", "Action" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.GameState), global::CityGame.GameState.Parser, new[]{ "Tick", "Mana", "Layer", "LayerRequirements", "BuildingStates", "HelperStates", "ErrorMessages" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.GameState), global::CityGame.GameState.Parser, new[]{ "Tick", "Mana", "Layer", "LayerRequirements", "BuildingStates", "HelperStates", "ErrorMessages", "Uuid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CityGame.GameInput), global::CityGame.GameInput.Parser, new[]{ "NecromancerAction", "HelperInput" }, null, null, null, null)
           }));
     }
@@ -2923,6 +2924,7 @@ namespace CityGame {
       buildingStates_ = other.buildingStates_.Clone();
       helperStates_ = other.helperStates_.Clone();
       errorMessages_ = other.errorMessages_.Clone();
+      uuid_ = other.uuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3012,6 +3014,18 @@ namespace CityGame {
       get { return errorMessages_; }
     }
 
+    /// <summary>Field number for the "uuid" field.</summary>
+    public const int UuidFieldNumber = 8;
+    private string uuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Uuid {
+      get { return uuid_; }
+      set {
+        uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -3034,6 +3048,7 @@ namespace CityGame {
       if(!buildingStates_.Equals(other.buildingStates_)) return false;
       if(!helperStates_.Equals(other.helperStates_)) return false;
       if(!errorMessages_.Equals(other.errorMessages_)) return false;
+      if (Uuid != other.Uuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3048,6 +3063,7 @@ namespace CityGame {
       hash ^= buildingStates_.GetHashCode();
       hash ^= helperStates_.GetHashCode();
       hash ^= errorMessages_.GetHashCode();
+      if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3082,6 +3098,10 @@ namespace CityGame {
       buildingStates_.WriteTo(output, _repeated_buildingStates_codec);
       helperStates_.WriteTo(output, _repeated_helperStates_codec);
       errorMessages_.WriteTo(output, _repeated_errorMessages_codec);
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3108,6 +3128,10 @@ namespace CityGame {
       buildingStates_.WriteTo(ref output, _repeated_buildingStates_codec);
       helperStates_.WriteTo(ref output, _repeated_helperStates_codec);
       errorMessages_.WriteTo(ref output, _repeated_errorMessages_codec);
+      if (Uuid.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Uuid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3131,6 +3155,9 @@ namespace CityGame {
       size += buildingStates_.CalculateSize(_repeated_buildingStates_codec);
       size += helperStates_.CalculateSize(_repeated_helperStates_codec);
       size += errorMessages_.CalculateSize(_repeated_errorMessages_codec);
+      if (Uuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Uuid);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3156,6 +3183,9 @@ namespace CityGame {
       buildingStates_.Add(other.buildingStates_);
       helperStates_.Add(other.helperStates_);
       errorMessages_.Add(other.errorMessages_);
+      if (other.Uuid.Length != 0) {
+        Uuid = other.Uuid;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3203,6 +3233,10 @@ namespace CityGame {
             errorMessages_.AddEntriesFrom(input, _repeated_errorMessages_codec);
             break;
           }
+          case 66: {
+            Uuid = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -3248,6 +3282,10 @@ namespace CityGame {
           }
           case 58: {
             errorMessages_.AddEntriesFrom(ref input, _repeated_errorMessages_codec);
+            break;
+          }
+          case 66: {
+            Uuid = input.ReadString();
             break;
           }
         }
