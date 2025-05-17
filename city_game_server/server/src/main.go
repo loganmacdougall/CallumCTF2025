@@ -7,6 +7,7 @@ import (
 	"encoding/binary"
 	"fmt"
 	"net"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -23,32 +24,59 @@ func start_game(init_conn net.Conn, port int) {
 
 	conn, err := dialer.Dial("tcp", fmt.Sprintf("localhost:%d", port))
 	if err != nil {
-		panic(err)
+		fmt.Printf("%s", err)
+		return
 	}
+
 	defer conn.Close()
 
 	fmt.Println("Connected to client server")
 
 	state := game.CreateInitialState()
-	state.Uuid = uuid.NewString()
+	state.GameId = uuid.NewString()
+
+	nothing_input := &pb.GameInput{NecromancerAction: &pb.NecromancerAction{ActionType: pb.NecromancerActionType_N_Nothing}, HelperInput: []*pb.HelperInput{}}
+
+	game_data := &pb.GameData{}
+	tick_data := &pb.TickData{}
 
 	input := &pb.GameInput{}
 
-	for range 5 {
+	for range 10000 {
 		err := send_state(conn, state)
 		if err != nil {
-			fmt.Println("Ran into an error when sending state to client server: ", err)
-			return
+			fmt.Printf("Ran into an error when sending state to client server: %s", err)
+			break
 		}
+
+		tick_data.State = state
 
 		err = receive_input(conn, input)
 		if err != nil {
-			fmt.Println("Ran into an error when receiving input from client server: ", err)
-			return
+			fmt.Printf("Ran into an error when receiving input from client server: %s", err)
+			tick_data.Input = nothing_input
+			game_data.Data = append(game_data.Data, proto.CloneOf(tick_data))
+			break
+		} else {
+			tick_data.Input = input
+			game_data.Data = append(game_data.Data, proto.CloneOf(tick_data))
 		}
 
 		state = game.GetNextState(state, input)
 	}
+
+	game_data_bytes, err := proto.Marshal(game_data)
+	if err != nil {
+		fmt.Printf("Failed to serialize game data: %s", err)
+		return
+	}
+
+	err = os.WriteFile("reply.gamedata", game_data_bytes, 0644)
+	if err != nil {
+		fmt.Printf("Error writing gamedata to file: %s", err)
+		return
+	}
+
 }
 
 func send_state(client_conn net.Conn, state *pb.GameState) error {
@@ -140,11 +168,14 @@ func main() {
 	}
 	defer listener.Close()
 
+	fmt.Println("Listening on port 8002")
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
 			fmt.Println("Error during accept: ", err)
 		}
+		fmt.Println("Received port messages connection")
 
 		go handle_connection(conn)
 	}

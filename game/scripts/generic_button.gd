@@ -1,8 +1,8 @@
 class_name GenericButton
 extends Button
 
-var _invisable
-@export var invisable : bool = false : 
+var _invisable = false
+@export var invisable : bool : 
 	get() : 
 		return _invisable
 	set(val) : 

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://0xoim3xiwd1f"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://0xoim3xiwd1f"]
 
 [ext_resource type="FontFile" uid="uid://bmala14iphm7k" path="res://assets/fonts/Jersey25-Regular.ttf" id="1_xgdp2"]
 [ext_resource type="FontFile" uid="uid://bhmxcexa3h4f4" path="res://assets/fonts/CourierPrime-Bold.ttf" id="2_d80jv"]
@@ -72,6 +72,12 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jsj3"]
+bg_color = Color(1, 0.556863, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2est8"]
+bg_color = Color(0.290196, 0.141176, 0.501961, 1)
+
 [resource]
 default_font = ExtResource("1_xgdp2")
 default_font_size = 36
@@ -100,6 +106,8 @@ Button/styles/hover = SubResource("StyleBoxFlat_611f8")
 Button/styles/normal = SubResource("StyleBoxFlat_pefyd")
 Button/styles/pressed = SubResource("StyleBoxFlat_upuy7")
 CodeEdit/fonts/font = ExtResource("2_d80jv")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_2jsj3")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2est8")
 RichTextLabel/colors/default_color = Color(0.290196, 0.141176, 0.501961, 1)
 RichTextLabel/fonts/mono_font = ExtResource("2_d80jv")
 RichTextLabel/fonts/normal_font = ExtResource("1_xgdp2")

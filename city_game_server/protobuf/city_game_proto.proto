@@ -123,10 +123,19 @@ message GameState {
   repeated BuildingState building_states = 5;
   repeated HelperState helper_states = 6;
   repeated ErrorMessage error_messages = 7;
-  string uuid = 8;
+  string game_id = 8;
 }
 
 message GameInput {
   NecromancerAction necromancer_action = 1;
   repeated HelperInput helper_input = 2;
+}
+
+message TickData {
+  GameState state = 1;
+  GameInput input = 2;
+}
+
+message GameData {
+  repeated TickData data = 1;
 }

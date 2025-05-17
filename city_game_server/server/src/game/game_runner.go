@@ -32,7 +32,7 @@ func CreateInitialState() *pb.GameState {
 		Layer:             0,
 		Mana:              consts.MANA_MAX,
 		LayerRequirements: consts.GetLayerRequirements(0),
-		Uuid:              "1234-5678-90ab-cdef",
+		GameId:            "1234-5678-90ab-cdef",
 	}
 
 	add_building := func(building pb.Building, x int, y int) {

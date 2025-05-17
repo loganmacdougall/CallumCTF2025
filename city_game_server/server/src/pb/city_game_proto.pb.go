@@ -923,7 +923,7 @@ type GameState struct {
 	BuildingStates    []*BuildingState       `protobuf:"bytes,5,rep,name=building_states,json=buildingStates,proto3" json:"building_states,omitempty"`
 	HelperStates      []*HelperState         `protobuf:"bytes,6,rep,name=helper_states,json=helperStates,proto3" json:"helper_states,omitempty"`
 	ErrorMessages     []*ErrorMessage        `protobuf:"bytes,7,rep,name=error_messages,json=errorMessages,proto3" json:"error_messages,omitempty"`
-	Uuid              string                 `protobuf:"bytes,8,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	GameId            string                 `protobuf:"bytes,8,opt,name=game_id,json=gameId,proto3" json:"game_id,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1007,9 +1007,9 @@ func (x *GameState) GetErrorMessages() []*ErrorMessage {
 	return nil
 }
 
-func (x *GameState) GetUuid() string {
+func (x *GameState) GetGameId() string {
 	if x != nil {
-		return x.Uuid
+		return x.GameId
 	}
 	return ""
 }
@@ -1062,6 +1062,102 @@ func (x *GameInput) GetNecromancerAction() *NecromancerAction {
 func (x *GameInput) GetHelperInput() []*HelperInput {
 	if x != nil {
 		return x.HelperInput
+	}
+	return nil
+}
+
+type TickData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	State         *GameState             `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	Input         *GameInput             `protobuf:"bytes,2,opt,name=input,proto3" json:"input,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TickData) Reset() {
+	*x = TickData{}
+	mi := &file_city_game_proto_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TickData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TickData) ProtoMessage() {}
+
+func (x *TickData) ProtoReflect() protoreflect.Message {
+	mi := &file_city_game_proto_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TickData.ProtoReflect.Descriptor instead.
+func (*TickData) Descriptor() ([]byte, []int) {
+	return file_city_game_proto_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *TickData) GetState() *GameState {
+	if x != nil {
+		return x.State
+	}
+	return nil
+}
+
+func (x *TickData) GetInput() *GameInput {
+	if x != nil {
+		return x.Input
+	}
+	return nil
+}
+
+type GameData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Data          []*TickData            `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GameData) Reset() {
+	*x = GameData{}
+	mi := &file_city_game_proto_proto_msgTypes[13]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GameData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GameData) ProtoMessage() {}
+
+func (x *GameData) ProtoReflect() protoreflect.Message {
+	mi := &file_city_game_proto_proto_msgTypes[13]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GameData.ProtoReflect.Descriptor instead.
+func (*GameData) Descriptor() ([]byte, []int) {
+	return file_city_game_proto_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *GameData) GetData() []*TickData {
+	if x != nil {
+		return x.Data
 	}
 	return nil
 }
@@ -1130,7 +1226,7 @@ const file_city_game_proto_proto_rawDesc = "" +
 	"\x06result\x18\x02 \x01(\x0e2\x0f.city_game.ItemR\x06result\"U\n" +
 	"\vHelperInput\x12\x1b\n" +
 	"\thelper_id\x18\x01 \x01(\rR\bhelperId\x12)\n" +
-	"\x06action\x18\x02 \x01(\v2\x11.city_game.ActionR\x06action\"\xe8\x02\n" +
+	"\x06action\x18\x02 \x01(\v2\x11.city_game.ActionR\x06action\"\xed\x02\n" +
 	"\tGameState\x12\x12\n" +
 	"\x04tick\x18\x01 \x01(\rR\x04tick\x12\x12\n" +
 	"\x04mana\x18\x02 \x01(\rR\x04mana\x12\x14\n" +
@@ -1138,11 +1234,16 @@ const file_city_game_proto_proto_rawDesc = "" +
 	"\x12layer_requirements\x18\x04 \x03(\v2\x1a.city_game.ItemRequirementR\x11layerRequirements\x12A\n" +
 	"\x0fbuilding_states\x18\x05 \x03(\v2\x18.city_game.BuildingStateR\x0ebuildingStates\x12;\n" +
 	"\rhelper_states\x18\x06 \x03(\v2\x16.city_game.HelperStateR\fhelperStates\x12>\n" +
-	"\x0eerror_messages\x18\a \x03(\v2\x17.city_game.ErrorMessageR\rerrorMessages\x12\x12\n" +
-	"\x04uuid\x18\b \x01(\tR\x04uuid\"\x93\x01\n" +
+	"\x0eerror_messages\x18\a \x03(\v2\x17.city_game.ErrorMessageR\rerrorMessages\x12\x17\n" +
+	"\agame_id\x18\b \x01(\tR\x06gameId\"\x93\x01\n" +
 	"\tGameInput\x12K\n" +
 	"\x12necromancer_action\x18\x01 \x01(\v2\x1c.city_game.NecromancerActionR\x11necromancerAction\x129\n" +
-	"\fhelper_input\x18\x02 \x03(\v2\x16.city_game.HelperInputR\vhelperInput*n\n" +
+	"\fhelper_input\x18\x02 \x03(\v2\x16.city_game.HelperInputR\vhelperInput\"b\n" +
+	"\bTickData\x12*\n" +
+	"\x05state\x18\x01 \x01(\v2\x14.city_game.GameStateR\x05state\x12*\n" +
+	"\x05input\x18\x02 \x01(\v2\x14.city_game.GameInputR\x05input\"3\n" +
+	"\bGameData\x12'\n" +
+	"\x04data\x18\x01 \x03(\v2\x13.city_game.TickDataR\x04data*n\n" +
 	"\bBuilding\x12\r\n" +
 	"\tWorkbench\x10\x00\x12\v\n" +
 	"\aFurnace\x10\x01\x12\n" +
@@ -1206,7 +1307,7 @@ func file_city_game_proto_proto_rawDescGZIP() []byte {
 }
 
 var file_city_game_proto_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_city_game_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_city_game_proto_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_city_game_proto_proto_goTypes = []any{
 	(Building)(0),              // 0: city_game.Building
 	(Item)(0),                  // 1: city_game.Item
@@ -1225,6 +1326,8 @@ var file_city_game_proto_proto_goTypes = []any{
 	(*HelperInput)(nil),        // 14: city_game.HelperInput
 	(*GameState)(nil),          // 15: city_game.GameState
 	(*GameInput)(nil),          // 16: city_game.GameInput
+	(*TickData)(nil),           // 17: city_game.TickData
+	(*GameData)(nil),           // 18: city_game.GameData
 }
 var file_city_game_proto_proto_depIdxs = []int32{
 	1,  // 0: city_game.Stack.item_id:type_name -> city_game.Item
@@ -1251,11 +1354,14 @@ var file_city_game_proto_proto_depIdxs = []int32{
 	8,  // 21: city_game.GameState.error_messages:type_name -> city_game.ErrorMessage
 	11, // 22: city_game.GameInput.necromancer_action:type_name -> city_game.NecromancerAction
 	14, // 23: city_game.GameInput.helper_input:type_name -> city_game.HelperInput
-	24, // [24:24] is the sub-list for method output_type
-	24, // [24:24] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	15, // 24: city_game.TickData.state:type_name -> city_game.GameState
+	16, // 25: city_game.TickData.input:type_name -> city_game.GameInput
+	17, // 26: city_game.GameData.data:type_name -> city_game.TickData
+	27, // [27:27] is the sub-list for method output_type
+	27, // [27:27] is the sub-list for method input_type
+	27, // [27:27] is the sub-list for extension type_name
+	27, // [27:27] is the sub-list for extension extendee
+	0,  // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_city_game_proto_proto_init() }
@@ -1272,7 +1378,7 @@ func file_city_game_proto_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_game_proto_proto_rawDesc), len(file_city_game_proto_proto_rawDesc)),
 			NumEnums:      5,
-			NumMessages:   12,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

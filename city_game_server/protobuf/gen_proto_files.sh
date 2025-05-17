@@ -1,1 +1,1 @@
-protoc --python_out=. --go_out=. --csharp_out=. city_game_proto.proto
+protoc --python_out=../client_template/lib/pb --go_out=. --csharp_out=../../game/scripts/pb city_game_proto.proto
