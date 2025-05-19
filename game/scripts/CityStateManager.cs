@@ -10,6 +10,7 @@ public partial class CityStateManager : Node
   private TileMapLayer buildingLayer;
   private TileMapLayer helperLayer;
   private TileMapLayer itemLayer;
+  private SubViewportContainer tilemap_viewport;
 
   private GameData data;
 
@@ -24,12 +25,28 @@ public partial class CityStateManager : Node
     helperLayer = GetNode<TileMapLayer>("%helpers");
     itemLayer = GetNode<TileMapLayer>("%items");
 
+    tilemap_viewport = GetNode<SubViewportContainer>("%CitySubViewportContainer");
+
     using var file = FileAccess.Open(gameDataFile, FileAccess.ModeFlags.Read);
     byte[] byte_data = file.GetBuffer((long)file.GetLength());
 
     data = GameData.Parser.ParseFrom(byte_data);
 
     SetTick(0);
+  }
+
+  public Vector2I GetTileFromMouseHover(bool clamped = true)
+  {
+    Vector2 mouse_pos = buildingLayer.GetGlobalMousePosition();
+    Vector2I coord = buildingLayer.LocalToMap(mouse_pos) / 2;
+
+    if (clamped)
+    {
+      coord.X = Math.Clamp(coord.X, 0, CityGameConsts.Consts.WORLD_SIZE.X - 1);
+      coord.Y = Math.Clamp(coord.X, 0, CityGameConsts.Consts.WORLD_SIZE.Y - 1);
+    }
+
+    return coord;
   }
 
   public void SetTick(int next_tick)

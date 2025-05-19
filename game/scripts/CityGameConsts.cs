@@ -104,5 +104,6 @@ namespace CityGameConsts
 	public class Consts
 	{
 		public static Vector2I HOUSE_COORDINATE = new(19, 6);
+		public static Vector2I WORLD_SIZE = new(40, 17);
 	}
 }

@@ -51,8 +51,6 @@ public partial class SaveTheCityPlayback : Node2D
 		playTexture = GD.Load<Texture2D>("res://assets/sprites/playback_play.png");
 		pauseTexture = GD.Load<Texture2D>("res://assets/sprites/playback_pause.png");
 
-		GD.Print(playTexture);
-
 		manager = GetNode<CityStateManager>("%CityStateManager");
 	}
 
@@ -67,6 +65,11 @@ public partial class SaveTheCityPlayback : Node2D
 				tick += ticks_past;
 				time -= ticks_past * seconds_per_tick;
 				manager.SetTick(tick);
+
+				if (tick >= manager.Count() - 1)
+				{
+					playing = false;
+				}
 			}
 		}
 	}
