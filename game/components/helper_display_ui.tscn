@@ -1,0 +1,111 @@
+[gd_scene load_steps=4 format=3 uid="uid://2vqel17d3uw6"]
+
+[ext_resource type="Script" uid="uid://b7b2x2jpml4pm" path="res://scripts/HelperDisplay.cs" id="1_arsci"]
+[ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_ha5b6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ha5b6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="HelperDisplayUI" type="BoxContainer"]
+script = ExtResource("1_arsci")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HelperInfo" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="helper_id" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "ID: 1"
+
+[node name="coord" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Coordinate: (3, 6)"
+
+[node name="items" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Items: 16 planks, 5 stones"
+
+[node name="action" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action: Interact"
+
+[node name="action_dir" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action Dir: Right"
+
+[node name="action_coord" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action Coord: (4, 6)"
+
+[node name="action_item" type="Label" parent="HBoxContainer/HelperInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action Item: plank"
+
+[node name="Line" type="PanelContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(4, 120)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ha5b6")
+
+[node name="InputInfo" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="input_action" type="Label" parent="HBoxContainer/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action: Interact"
+
+[node name="input_action_dir" type="Label" parent="HBoxContainer/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action Dir: Right"
+
+[node name="input_action_coord" type="Label" parent="HBoxContainer/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action Coord: (4, 6)"
+
+[node name="input_action_item" type="Label" parent="HBoxContainer/InputInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ha5b6")
+theme_override_font_sizes/font_size = 28
+text = "Action Item: plank"

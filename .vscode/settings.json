@@ -1,0 +1,5 @@
+{
+  "python.analysis.extraPaths": [
+    "./city_game_server/client_template"
+  ]
+}

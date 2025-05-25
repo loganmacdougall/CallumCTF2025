@@ -48,6 +48,22 @@ func HasItemsForRecipe(stacks *[]*pb.Stack, recipe *pb.CraftingRecipe) bool {
 	return true
 }
 
+func HasItemForLayer(stack *pb.Stack, recipe []*pb.ItemRequirement) int {
+	for i, req := range recipe {
+		if req.ItemId != stack.ItemId {
+			continue
+		}
+
+		if req.Total == req.Count {
+			return -1
+		}
+
+		return i
+	}
+
+	return -1
+}
+
 func AvailableStackIndexFor(stacks *[]*pb.Stack, item pb.Item, stack_count int, is_crate bool) int {
 	max_carry_count := GetMaxCarryCount(item)
 

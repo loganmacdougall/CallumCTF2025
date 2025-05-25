@@ -60,6 +60,9 @@ func start_game(init_conn net.Conn, port int) {
 		} else {
 			tick_data.Input = input
 			game_data.Data = append(game_data.Data, proto.CloneOf(tick_data))
+			if state.Layer == 6 {
+				break
+			}
 		}
 
 		state = game.GetNextState(state, input)

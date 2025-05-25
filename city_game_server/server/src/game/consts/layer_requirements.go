@@ -2,13 +2,27 @@ package consts
 
 import (
 	"city_game/src/pb"
+
+	"google.golang.org/protobuf/proto"
 )
 
 var layer_requirements [][]*pb.ItemRequirement
 
 func GetLayerRequirements(layer int) []*pb.ItemRequirement {
 	initialize_layers()
-	return layer_requirements[layer]
+
+	if layer > len(layer_requirements) {
+		layer = len(layer_requirements) - 1
+	}
+
+	reqs := []*pb.ItemRequirement{}
+	ref_reqs := layer_requirements[layer]
+
+	for _, r := range ref_reqs {
+		reqs = append(reqs, proto.CloneOf(r))
+	}
+
+	return reqs
 }
 
 func initialize_layers() {
@@ -20,93 +34,113 @@ func initialize_layers() {
 		{
 			{
 				ItemId: pb.Item_Stone,
-				Count:  50,
+				Count:  0,
+				Total:  50,
 			},
 		},
 		{
 			{
 				ItemId: pb.Item_Stone,
-				Count:  50,
+				Count:  0,
+				Total:  50,
 			},
 			{
 				ItemId: pb.Item_Plank,
-				Count:  50,
+				Count:  0,
+				Total:  50,
 			},
 		},
 		{
 			{
 				ItemId: pb.Item_Stone,
-				Count:  50,
+				Count:  0,
+				Total:  50,
 			},
 			{
 				ItemId: pb.Item_Plank,
-				Count:  50,
+				Count:  0,
+				Total:  50,
 			},
 			{
 				ItemId: pb.Item_Door,
-				Count:  5,
+				Count:  0,
+				Total:  5,
 			},
 			{
 				ItemId: pb.Item_Metal,
-				Count:  5,
+				Count:  0,
+				Total:  5,
 			},
 		},
 		{
 			{
 				ItemId: pb.Item_Stone,
-				Count:  100,
+				Count:  0,
+				Total:  100,
 			},
 			{
 				ItemId: pb.Item_Plank,
-				Count:  100,
+				Count:  0,
+				Total:  100,
 			},
 			{
 				ItemId: pb.Item_Door,
-				Count:  10,
+				Count:  0,
+				Total:  10,
 			},
 			{
 				ItemId: pb.Item_Metal,
-				Count:  10,
+				Count:  0,
+				Total:  10,
 			},
 			{
 				ItemId: pb.Item_Window,
-				Count:  4,
+				Count:  0,
+				Total:  4,
 			},
 		},
 		{
 			{
 				ItemId: pb.Item_Stone,
-				Count:  150,
+				Count:  0,
+				Total:  150,
 			},
 			{
 				ItemId: pb.Item_Plank,
-				Count:  100,
+				Count:  0,
+				Total:  100,
 			},
 			{
 				ItemId: pb.Item_Door,
-				Count:  10,
+				Count:  0,
+				Total:  10,
 			},
 			{
 				ItemId: pb.Item_Metal,
-				Count:  20,
+				Count:  0,
+				Total:  20,
 			},
 			{
 				ItemId: pb.Item_Window,
-				Count:  4,
+				Count:  0,
+				Total:  4,
 			},
 		},
 		{
 			{
 				ItemId: pb.Item_Stone,
-				Count:  250,
+				Count:  0,
+				Total:  250,
 			},
 			{
 				ItemId: pb.Item_Plank,
-				Count:  150,
+				Count:  0,
+				Total:  150,
 			},
 			{
 				ItemId: pb.Item_Metal,
-				Count:  50,
+				Count:  0,
+				Total:  50,
 			},
 		},
 	}

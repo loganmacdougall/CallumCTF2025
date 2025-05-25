@@ -31,8 +31,6 @@ func correct_camera_position() -> void:
 		position.y = clamp(position.y, top_clamp, bottom_clamp)
 
 func _input(event: InputEvent) -> void:
-	var current_mouse_position = get_viewport().get_mouse_position()
-	
 	if event is InputEventMouseButton and event.is_pressed():
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:

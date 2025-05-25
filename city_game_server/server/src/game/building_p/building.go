@@ -30,6 +30,8 @@ func InteractWithBuilding(building_state *pb.BuildingState, helper_state *pb.Hel
 		interact_mine(building_state, helper_state, mn)
 	case pb.Building_Workbench:
 		interact_workbench(building_state, helper_state, mn)
+	case pb.Building_House:
+		interact_house(building_state, helper_state, mn)
 	default:
 		mn.AddError(fmt.Sprintf("Helper %d with action interact interacted with a building that can't be interacted with",
 			helper_state.HelperId), helper_state.Coordinate)
@@ -89,6 +91,29 @@ func interact_workbench(building_state *pb.BuildingState, helper_state *pb.Helpe
 
 	bu.RemoveItemsFromRecipe(building_state, item_recipe)
 	hu.AddItem(helper_state, *item_to_craft)
+}
+
+func interact_house(building_state *pb.BuildingState, helper_state *pb.HelperState, mn *nsm.NextStateManager) {
+	helper_stack_idx := -1
+
+	for i, helper_stack := range helper_state.Items {
+		j := utility.HasItemForLayer(helper_stack, mn.State.LayerRequirements)
+
+		if j == -1 {
+			continue
+		}
+
+		helper_stack_idx = i
+	}
+
+	if helper_stack_idx == -1 {
+		mn.AddError(fmt.Sprintf("helper %d with action interact tried to add idea to layer when helper had no item to add to the layer requirements", helper_state.HelperId), helper_state.Coordinate)
+		return
+	}
+
+	item := helper_state.Items[helper_stack_idx].ItemId
+	mn.AddItemToRequirement(item)
+	hu.RemoveItem(helper_state, item)
 }
 
 func handle_furnace(building_state *pb.BuildingState, mn *nsm.NextStateManager) {

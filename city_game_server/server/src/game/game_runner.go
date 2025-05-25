@@ -61,6 +61,9 @@ func CreateInitialState() *pb.GameState {
 	add_building(pb.Building_Lumber, 31, 16)
 	add_building(pb.Building_Lumber, 32, 16)
 
+	add_building(pb.Building_Sandpit, 7, 0)
+	add_building(pb.Building_Sandpit, 8, 0)
+
 	helper := &pb.HelperState{
 		HelperId:   0,
 		Coordinate: &pb.Coordinate{X: 20, Y: 9},

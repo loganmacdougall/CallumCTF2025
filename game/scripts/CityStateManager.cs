@@ -43,10 +43,16 @@ public partial class CityStateManager : Node
     if (clamped)
     {
       coord.X = Math.Clamp(coord.X, 0, CityGameConsts.Consts.WORLD_SIZE.X - 1);
-      coord.Y = Math.Clamp(coord.X, 0, CityGameConsts.Consts.WORLD_SIZE.Y - 1);
+      coord.Y = Math.Clamp(coord.Y, 0, CityGameConsts.Consts.WORLD_SIZE.Y - 1);
     }
 
     return coord;
+  }
+
+  public bool IsValidTileFromMouseHover()
+  {
+    Vector2I tile = GetTileFromMouseHover(false);
+    return tile.X >= 0 && tile.Y >= 0 && tile.X < CityGameConsts.Consts.WORLD_SIZE.X && tile.Y < CityGameConsts.Consts.WORLD_SIZE.Y;
   }
 
   public void SetTick(int next_tick)
@@ -69,6 +75,11 @@ public partial class CityStateManager : Node
   public int Count()
   {
     return data.Data.Count();
+  }
+
+  public TickData GetCurrentTickData()
+  {
+    return data.Data[tick];
   }
 
   public void UpdateBuildings()

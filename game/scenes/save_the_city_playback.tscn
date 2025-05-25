@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cdc8xskx4pbv4"]
+[gd_scene load_steps=20 format=4 uid="uid://cdc8xskx4pbv4"]
 
 [ext_resource type="Texture2D" uid="uid://bqskjxixbffuf" path="res://assets/sprites/necromancer.png" id="1_a573y"]
 [ext_resource type="Script" uid="uid://bqhdwnpvrrlbx" path="res://scripts/SaveTheCityPlayback.cs" id="1_ay6iu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b46gk8enldlck" path="res://scripts/TickSlider.cs" id="9_komj4"]
 [ext_resource type="Script" uid="uid://purhti7lxni0" path="res://scripts/city_game_camera.gd" id="9_vsqea"]
 [ext_resource type="Script" uid="uid://cqmmb24kr36ug" path="res://scripts/CoordinateLabel.cs" id="12_umcsu"]
+[ext_resource type="Script" uid="uid://iikm44fimb8f" path="res://scripts/CityHoverMenu.cs" id="13_y6itq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hasyv"]
 atlas = ExtResource("1_a573y")
@@ -233,6 +234,22 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 text = "(99, 99)"
 script = ExtResource("12_umcsu")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer2"]
+offset_left = 704.0
+offset_top = 176.0
+offset_right = 1274.0
+offset_bottom = 720.0
+mouse_filter = 2
+alignment = 2
+
+[node name="CityHoverMenu" type="VBoxContainer" parent="CanvasLayer2/BoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("13_y6itq")
 
 [connection signal="pressed" from="CanvasLayer/Buttons/PlaybackButtonSprite/PlaybackButton" to="." method="OnPlaybackButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/StepLeftButtonSprite/StepLeftButton" to="." method="OnStepLeftButtonPressed"]

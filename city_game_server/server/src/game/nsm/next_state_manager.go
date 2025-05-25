@@ -277,3 +277,38 @@ func (mn *NextStateManager) AddPushError(building_index int) {
 		mn.AddError(fmt.Sprintf("helper %d attempted to push building but failed", helper_id), cord)
 	}
 }
+
+func (mn *NextStateManager) AddItemToRequirement(item pb.Item) bool {
+	for _, req := range mn.State.LayerRequirements {
+		if req.ItemId != item {
+			continue
+		}
+
+		if req.Count == req.Total {
+			return false
+		}
+
+		req.Count += 1
+
+		if req.Count == req.Total {
+			mn.HandlePossibleLayerCompletion()
+		}
+
+		return true
+	}
+
+	return false
+}
+
+func (mn *NextStateManager) HandlePossibleLayerCompletion() bool {
+	for _, req := range mn.State.LayerRequirements {
+		if req.Count != req.Total {
+			return false
+		}
+	}
+
+	mn.State.Layer += 1
+	mn.State.LayerRequirements = consts.GetLayerRequirements(int(mn.State.Layer))
+
+	return true
+}
