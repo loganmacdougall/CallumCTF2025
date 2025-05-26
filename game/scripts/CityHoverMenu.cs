@@ -8,12 +8,15 @@ public partial class CityHoverMenu : VBoxContainer
   private Vector2I currentCoord = new Vector2I(-1, -1);
   private CityStateManager manager;
   private string helperDisplayScenePath = "res://components/helper_display_ui.tscn";
+  private string buildingDisplayScenePath = "res://components/building_display_ui.tscn";
   private PackedScene helperDisplayScene;
+  private PackedScene buildingDisplayScene;
 
   public override void _Ready()
   {
     manager = GetNode<CityStateManager>("%CityStateManager");
     helperDisplayScene = GD.Load<PackedScene>(helperDisplayScenePath);
+    buildingDisplayScene = GD.Load<PackedScene>(buildingDisplayScenePath);
     HideWithoutClear();
   }
 
@@ -55,44 +58,62 @@ public partial class CityHoverMenu : VBoxContainer
   public void UpdateInformation(TickData tickData, Coordinate coord)
   {
     List<HelperState> helpers = new List<HelperState>();
+    BuildingState buildingState = null;
     Dictionary<uint, HelperInput> helperInputs = new Dictionary<uint, HelperInput>();
 
-    GD.Print(coord);
-    foreach (HelperState helper in tickData.State.HelperStates)
+    foreach (BuildingState building in tickData.State.BuildingStates)
     {
-      GD.Print(helper.Coordinate);
-      if (helper.Coordinate.X == coord.X && helper.Coordinate.Y == coord.Y)
+      if (building.Coordinate.X == coord.X && building.Coordinate.Y == coord.Y)
       {
-        helpers.Add(helper);
+        buildingState = building;
+        break;
       }
     }
 
-    foreach (HelperInput helperInput in tickData.Input.HelperInput)
+    if (buildingState == null)
     {
-      helperInputs.Add(helperInput.HelperId, helperInput);
-    }
 
-    if (helpers.Count == 0)
-    {
-      HideWithoutClear();
-      GD.Print("Found nothing to show");
-      return;
-    }
+      foreach (HelperState helper in tickData.State.HelperStates)
+      {
+        if (helper.Coordinate.X == coord.X && helper.Coordinate.Y == coord.Y)
+        {
+          helpers.Add(helper);
+        }
+      }
 
-    GD.Print("Showing Hover Menu for coord: ", coord);
+      foreach (HelperInput helperInput in tickData.Input.HelperInput)
+      {
+        helperInputs.Add(helperInput.HelperId, helperInput);
+      }
+
+      if (helpers.Count == 0)
+      {
+        HideWithoutClear();
+        return;
+      }
+    }
 
     ClearAll();
     Visible = true;
 
-    foreach (HelperState helper in helpers)
+    if (buildingState != null)
     {
-      HelperDisplay helper_display = helperDisplayScene.Instantiate<HelperDisplay>();
-      helper_display.helperState = helper;
-      if (helperInputs.ContainsKey(helper.HelperId))
+      BuildingDisplay building_display = buildingDisplayScene.Instantiate<BuildingDisplay>();
+      building_display.buildingState = buildingState;
+      AddChild(building_display);
+    }
+    else
+    {
+      foreach (HelperState helper in helpers)
       {
-        helper_display.helperInput = helperInputs[helper.HelperId];
+        HelperDisplay helper_display = helperDisplayScene.Instantiate<HelperDisplay>();
+        helper_display.helperState = helper;
+        if (helperInputs.ContainsKey(helper.HelperId))
+        {
+          helper_display.helperInput = helperInputs[helper.HelperId];
+        }
+        AddChild(helper_display);
       }
-      AddChild(helper_display);
     }
   }
 

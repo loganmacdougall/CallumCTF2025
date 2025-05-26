@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://5iw5nr2c88uw"]
+
+[ext_resource type="Script" uid="uid://b3y41whktbqig" path="res://scripts/BuildingDisplay.cs" id="1_fyamf"]
+[ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_vwinu"]
+
+[node name="BuildingDisplayUi" type="BoxContainer"]
+script = ExtResource("1_fyamf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="building_type" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vwinu")
+theme_override_font_sizes/font_size = 28
+text = "Building: 1"
+
+[node name="coord" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vwinu")
+theme_override_font_sizes/font_size = 28
+text = "Coordinate: 1"
+
+[node name="items" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vwinu")
+theme_override_font_sizes/font_size = 28
+text = "Items: 1"
+
+[node name="state" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vwinu")
+theme_override_font_sizes/font_size = 28
+text = "State: 1"

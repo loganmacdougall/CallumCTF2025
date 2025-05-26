@@ -68,7 +68,7 @@ script = ExtResource("1_ay6iu")
 [node name="CityStateManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_y426u")
-gameDataFile = "res://assets/reply.gamedata"
+gameDataFile = "res://assets/replay.gamedata"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
