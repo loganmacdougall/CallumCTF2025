@@ -1,0 +1,192 @@
+[gd_scene load_steps=11 format=3 uid="uid://4l4tgkre35eo"]
+
+[ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_am3sp"]
+[ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="2_umaip"]
+[ext_resource type="Script" uid="uid://b2yyowqwl5v6v" path="res://scripts/castle_code_edit.gd" id="2_weyp0"]
+[ext_resource type="Shader" uid="uid://ccxpniaohds6c" path="res://shaders/fix_lights_computer.gdshader" id="4_lvu3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am3sp"]
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2901961, 0.14117648, 0.5019608, 1)
+border_color = Color(1, 0.5568628, 0.5019608, 1)
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_umaip"]
+number_color = Color(0.77254903, 0.22745098, 0.6156863, 1)
+symbol_color = Color(1, 0.5568628, 0.5019608, 1)
+function_color = Color(0.77254903, 0.22745098, 0.6156863, 1)
+member_variable_color = Color(1, 0.5568628, 0.5019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weyp0"]
+bg_color = Color(0.290196, 0.141176, 0.501961, 1)
+border_color = Color(1, 0.5568628, 0.5019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b3sr"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2901961, 0.14117648, 0.5019608, 1)
+border_color = Color(1, 0.5568628, 0.5019608, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uddaf"]
+shader = ExtResource("4_lvu3l")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.050000002375
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.050000002375
+shader_parameter/resolution = Vector2(720, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 0.5
+shader_parameter/roll_size = 0.50000002375
+shader_parameter/roll_variation = 0.595
+shader_parameter/distort_intensity = 0.0050000002375
+shader_parameter/noise_opacity = 0.050000002375
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.010000000475
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.2
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.150000007125
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.25
+shader_parameter/vignette_opacity = 0.328
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w5yuu"]
+
+[node name="PuzzleCastleMainframe" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1281.0
+offset_bottom = 720.0
+color = Color(1, 0.5568628, 0.5019608, 1)
+
+[node name="CodeEdit" type="CodeEdit" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -832.0
+offset_top = 16.0
+offset_right = -15.0
+offset_bottom = 706.0
+grow_horizontal = 0
+theme = ExtResource("1_am3sp")
+theme_override_colors/font_color = Color(1, 0.5568628, 0.5019608, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_am3sp")
+text = "def action_up():
+  up()
+
+def action_down():
+  down()
+
+def action_left():
+  left()
+
+def action_right():
+  right()
+
+def action_interact():
+  text = interact()
+  if text:
+    display(text)"
+syntax_highlighter = SubResource("CodeHighlighter_umaip")
+gutters_draw_executing_lines = true
+gutters_draw_line_numbers = true
+code_completion_enabled = true
+indent_size = 2
+indent_use_spaces = true
+indent_automatic = true
+indent_automatic_prefixes = Array[String]([":"])
+script = ExtResource("2_weyp0")
+
+[node name="BackButton" parent="CanvasLayer" instance=ExtResource("2_umaip")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 413.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_weyp0")
+text = "Back"
+scene = "uid://b1yv8cptfedx3"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 134.0
+offset_right = 413.0
+offset_bottom = 706.0
+theme = ExtResource("1_am3sp")
+theme_override_colors/default_color = Color(1, 0.5568628, 0.5019608, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b3sr")
+bbcode_enabled = true
+text = "[center][font_size={48}]Documentation[/font_size][/center]
+
+You control a character in a castle who must solve challenges to move on to the next level. This character has the following actions:
+
+[ul]
+Up - (Up Arrow / W)
+Down - (Down Arrow / S)
+Left - (Left Arrow / A)
+Right - (Right Arrow / D)
+Interact - (Enter / E)
+[/ul]
+
+However, for those who have been granted access into the mainframe, you have the power to go further than those without. Using the language which bounds this universe (Python 3.13), you have full control of what each action performs. Here are the list of functions availble to you within each action:
+
+[ul]
+up(): bool - Returns if the player successfully moved up
+down(): bool - Returns if the player successfully moved down
+left(): bool - Returns if the player successfully moved left
+right(): bool - Returns if the player successfully moved right
+interact:(): str - Returns a list of text if the interacted object has text to return, otherwise returns None
+tile_on(): int - Returns the tile id the player is on
+tile_up(): int - Returns the tile id one tile up from the player
+tile_down(): int - Returns the tile id one tile down from the player
+tile_left(): int - Returns the tile id one tile left from the player
+tile_right(): int - Returns the tile id one tile right from the player
+display(text: str) - Displays the text to the game (max 50 lines per action)
+print(text: str) - Prints the text to the console (max 50 lines per action)
+[/ul]
+
+You can change any of the existing actions, or you can use one of the number actions which are by default unused:
+[ul]
+action_1 - (1)
+action_2 - (2)
+action_3 - (3)
+action_4 - (4)
+action_5 - (5)
+action_6 - (6)
+action_7 - (7)
+action_8 - (8)
+action_9 - (9)
+action_0 - (0)
+[/ul]
+
+Imports will not work as this code exists inside a pocket dimension (sandboxed environment), but several imports are already made available to you, such as:
+
+[ul]
+math
+itertools
+functools
+string
+re
+[/ul]
+
+Use the power of the mainframe and conqour the world"
+
+[node name="ScreenShader" type="Sprite2D" parent="CanvasLayer"]
+top_level = true
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_uddaf")
+scale = Vector2(1280, 720)
+texture = SubResource("CanvasTexture_w5yuu")
+centered = false
+
+[connection signal="text_changed" from="CanvasLayer/CodeEdit" to="CanvasLayer/CodeEdit" method="_on_text_changed"]

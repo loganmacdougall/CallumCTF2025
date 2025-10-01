@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 @onready var button = $"./GenericButton"
 @onready var textbox = %Textbox
 
-var d_explaing: Dialog = load("res://resources/dialog/001_boss.tres")
+var d_explaing: PreparedDialog = load("res://resources/dialog/001_boss.tres")
 
 var _mad = true
 @export var mad: bool:

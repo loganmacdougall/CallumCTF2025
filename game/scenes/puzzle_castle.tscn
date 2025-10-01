@@ -1,0 +1,245 @@
+[gd_scene load_steps=24 format=4 uid="uid://b1yv8cptfedx3"]
+
+[ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_kbi8t"]
+[ext_resource type="Script" uid="uid://cpm7dgtgye1t3" path="res://scripts/puzzle_castle.gd" id="1_wc82b"]
+[ext_resource type="Texture2D" uid="uid://dy38lup2skc2d" path="res://assets/sprites/puzzle_castle_guide.png" id="2_ej2wl"]
+[ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="2_shvpr"]
+[ext_resource type="Texture2D" uid="uid://dlpvlyer4gmfj" path="res://assets/sprites/playback_play.png" id="3_wyllh"]
+[ext_resource type="PackedScene" uid="uid://c5wduygpwhgea" path="res://components/textbox.tscn" id="4_gagnr"]
+[ext_resource type="Texture2D" uid="uid://b3qxtaarfg2oc" path="res://assets/sprites/computer.png" id="4_wyllh"]
+[ext_resource type="PackedScene" uid="uid://8n8wg816kpvx" path="res://components/puzzle_castle_connection.tscn" id="5_a278f"]
+[ext_resource type="Script" uid="uid://cfg2djafa3r51" path="res://scripts/puzzle_castle_world_exporter.gd" id="6_ej2wl"]
+[ext_resource type="Texture2D" uid="uid://ti1cinvb8yij" path="res://assets/sprites/traveller.png" id="8_wc82b"]
+[ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="9_wc82b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ej2wl"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.77254903, 0.22745098, 0.6156863, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.2901961, 0.14117648, 0.5019608, 1)
+shadow_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ej2wl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f60q1"]
+bg_color = Color(1, 0.5568628, 0.5019608, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.2901961, 0.14117648, 0.5019608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ofi"]
+texture = ExtResource("2_ej2wl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kbi8t"]
+sources/2 = SubResource("TileSetAtlasSource_q0ofi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f60q1"]
+atlas = ExtResource("8_wc82b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxjqs"]
+atlas = ExtResource("8_wc82b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtkb3"]
+atlas = ExtResource("8_wc82b")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikxkj"]
+atlas = ExtResource("8_wc82b")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixsvo"]
+atlas = ExtResource("8_wc82b")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gba7a"]
+atlas = ExtResource("8_wc82b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_505c8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f60q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxjqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtkb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikxkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixsvo")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gba7a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PuzzleCastle" type="Node2D"]
+script = ExtResource("1_wc82b")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.5568628, 0.5019608, 1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Label" parent="UI"]
+offset_left = 463.0
+offset_top = 14.0
+offset_right = 652.0
+offset_bottom = 105.0
+theme = ExtResource("1_kbi8t")
+theme_override_font_sizes/font_size = 90
+text = "60.00"
+
+[node name="TextEdit" type="TextEdit" parent="UI"]
+offset_left = 19.0
+offset_top = 106.0
+offset_right = 365.0
+offset_bottom = 682.0
+size_flags_vertical = 0
+theme = ExtResource("1_kbi8t")
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_ej2wl")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ej2wl")
+text = "
+"
+editable = false
+wrap_mode = 1
+
+[node name="ResetButton" parent="UI" instance=ExtResource("9_wc82b")]
+offset_left = 706.0
+offset_top = 29.0
+offset_right = 846.0
+offset_bottom = 94.0
+theme = ExtResource("1_kbi8t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_f60q1")
+text = " Reset "
+
+[node name="PlaybackPlay" type="Sprite2D" parent="UI"]
+position = Vector2(50, 58)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wyllh")
+flip_h = true
+
+[node name="BackButton" parent="UI" instance=ExtResource("2_shvpr")]
+offset_left = 19.0
+offset_top = 29.0
+offset_right = 81.0
+offset_bottom = 86.0
+scene = "uid://by6yif3rcuo53"
+invisable = true
+
+[node name="Computer" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(1121, 359)
+scale = Vector2(6, 6)
+texture = ExtResource("4_wyllh")
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 980.0
+offset_top = 501.0
+offset_right = 1263.0
+offset_bottom = 578.0
+theme = ExtResource("1_kbi8t")
+text = "Enter the
+Mainframe"
+horizontal_alignment = 1
+
+[node name="HackButton" parent="UI" instance=ExtResource("2_shvpr")]
+offset_left = 989.0
+offset_top = 210.0
+offset_right = 1259.0
+offset_bottom = 578.0
+scene = "uid://4l4tgkre35eo"
+invisable = true
+
+[node name="CenterLabel" type="Label" parent="UI"]
+visible = false
+offset_left = 532.0
+offset_top = 445.0
+offset_right = 813.0
+offset_bottom = 510.0
+theme = ExtResource("1_kbi8t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.2901961, 0.14117648, 0.5019608, 1)
+theme_override_constants/outline_size = 48
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(392, 682)
+scale = Vector2(4, 4)
+
+[node name="Ground" type="TileMapLayer" parent="World"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, -144)
+tile_map_data = PackedByteArray("AAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAADAAEAAgACAAAAAAAEAAEAAgABAAAAAAAFAAEAAgACAAAAAAAGAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAIAAEAAgAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAIAAIAAgAAAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAFAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgADAAMAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAABAAYAAgADAAAAAAACAAYAAgADAAAAAAADAAYAAgADAAAAAAAEAAYAAgAAAAEAAAAFAAYAAgADAAAAAAAGAAYAAgADAAAAAAAHAAYAAgADAAAAAAAIAAYAAgADAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgADAAAAAAAEAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_kbi8t")
+
+[node name="Player" type="AnimatedSprite2D" parent="World"]
+position = Vector2(72, -72.00001)
+sprite_frames = SubResource("SpriteFrames_505c8")
+autoplay = "default"
+
+[node name="Textbox" parent="." instance=ExtResource("4_gagnr")]
+
+[node name="PuzzleCastleConnection" parent="." instance=ExtResource("5_a278f")]
+
+[node name="PuzzleCastleWorldExporter" type="Node" parent="."]
+script = ExtResource("6_ej2wl")
+worldname = "world1_view"
+
+[connection signal="pressed" from="UI/ResetButton" to="." method="_on_reset_button_pressed"]

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp6dko2yjjxr7"]
+[gd_scene load_steps=3 format=3 uid="uid://cp6dko2yjjxr7"]
 
 [ext_resource type="Script" uid="uid://bpbsyudtix1ng" path="res://scripts/generic_button.gd" id="1_gh37s"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gh37s"]
+
 [node name="GenericButton" type="Button"]
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gh37s")
 script = ExtResource("1_gh37s")

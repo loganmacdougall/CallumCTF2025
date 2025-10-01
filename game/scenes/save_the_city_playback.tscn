@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cdc8xskx4pbv4"]
+[gd_scene load_steps=23 format=4 uid="uid://cdc8xskx4pbv4"]
 
 [ext_resource type="Texture2D" uid="uid://bqskjxixbffuf" path="res://assets/sprites/necromancer.png" id="1_a573y"]
 [ext_resource type="Script" uid="uid://bqhdwnpvrrlbx" path="res://scripts/SaveTheCityPlayback.cs" id="1_ay6iu"]
@@ -11,6 +11,7 @@
 [ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="8_xdmcy"]
 [ext_resource type="Script" uid="uid://b46gk8enldlck" path="res://scripts/TickSlider.cs" id="9_komj4"]
 [ext_resource type="Script" uid="uid://purhti7lxni0" path="res://scripts/city_game_camera.gd" id="9_vsqea"]
+[ext_resource type="Script" uid="uid://dfnusmx2bcrjd" path="res://scripts/city_game_mouse_detect.gd" id="12_27se5"]
 [ext_resource type="Script" uid="uid://cqmmb24kr36ug" path="res://scripts/CoordinateLabel.cs" id="12_umcsu"]
 [ext_resource type="Script" uid="uid://iikm44fimb8f" path="res://scripts/CityHoverMenu.cs" id="13_y6itq"]
 
@@ -61,6 +62,12 @@ animations = [{
 "name": &"summon",
 "speed": 6.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na8qo"]
+size = Vector2(1280, 544)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6itq"]
+bg_color = Color(0.772549, 0.227451, 0.615686, 1)
 
 [node name="SaveTheCityPlayback" type="Node2D"]
 script = ExtResource("1_ay6iu")
@@ -200,6 +207,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.290196, 0.141176, 0.501961, 1)
 
+[node name="Area2D" type="Area2D" parent="CitySubViewportContainer/CitySubViewport"]
+script = ExtResource("12_27se5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CitySubViewportContainer/CitySubViewport/Area2D"]
+position = Vector2(640, 272)
+shape = SubResource("RectangleShape2D_na8qo")
+
 [node name="TileLayers" type="Node2D" parent="CitySubViewportContainer/CitySubViewport"]
 
 [node name="floor" type="TileMapLayer" parent="CitySubViewportContainer/CitySubViewport/TileLayers"]
@@ -237,15 +251,23 @@ script = ExtResource("12_umcsu")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer2"]
-offset_left = 704.0
-offset_top = 176.0
+[node name="BoxContainer" type="ScrollContainer" parent="CanvasLayer2"]
+offset_left = 781.0
+offset_top = 185.0
 offset_right = 1274.0
-offset_bottom = 720.0
+offset_bottom = 710.0
 mouse_filter = 2
-alignment = 2
+horizontal_scroll_mode = 0
 
-[node name="CityHoverMenu" type="VBoxContainer" parent="CanvasLayer2/BoxContainer"]
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer2/BoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer2/BoxContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6itq")
+
+[node name="CityHoverMenu" type="VBoxContainer" parent="CanvasLayer2/BoxContainer/BoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
@@ -256,3 +278,4 @@ script = ExtResource("13_y6itq")
 [connection signal="pressed" from="CanvasLayer/Buttons/StepRightButtonSprite/StepRightButton" to="." method="OnStepRightButtonPressed"]
 [connection signal="value_changed" from="CanvasLayer/Buttons/PlaybackSpeed" to="." method="OnPlaybackSpeedValueChanged"]
 [connection signal="value_changed" from="CanvasLayer/Buttons/TickSlider" to="CanvasLayer/Buttons/TickSlider" method="OnValueChanged"]
+[connection signal="input_event" from="CitySubViewportContainer/CitySubViewport/Area2D" to="CitySubViewportContainer/CitySubViewport/Area2D" method="_on_input_event"]

@@ -15,11 +15,10 @@ func _ready() -> void:
 
 func show_textbox(val):
 	visible = val
-	
-func run_dialog(i):
-	print("Loading ",i)
-	current_dialog = DialogManager.get_dialog(i)
-	text.text = "[fly]" + current_dialog + "[/fly]"
+
+func run_message(msg):
+	text.text = "[fly]%s[/fly]" % [msg]
+	current_dialog = msg
 	update_time = 0
 	fade_finish_time = 1 + text.get_total_character_count() / FlyRichTextEffect.speed
 
@@ -33,6 +32,9 @@ func _process(delta: float) -> void:
 		arrow_animation.stop()
 
 func _on_generic_button_pressed() -> void:
+	click()
+
+func click() -> void:
 	if update_time <= fade_finish_time:
 		text.text = current_dialog
 		fade_finish_time = 0

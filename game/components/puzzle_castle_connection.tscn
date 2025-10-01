@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8n8wg816kpvx"]
+
+[ext_resource type="Script" uid="uid://brv2w5kh8gcum" path="res://scripts/puzzle_castle_connection.gd" id="1_2tlh4"]
+
+[node name="PuzzleCastleConnection" type="Node"]
+script = ExtResource("1_2tlh4")

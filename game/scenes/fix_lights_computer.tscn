@@ -30,31 +30,31 @@ bg_color = Color(0.290196, 0.141176, 0.501961, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdncw"]
 bg_color = Color(0.290196, 0.141176, 0.501961, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ylfn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3po3b"]
 shader = ExtResource("1_7ylfn")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.17
+shader_parameter/scanlines_opacity = 0.050000002375
 shader_parameter/scanlines_width = 0.0
-shader_parameter/grille_opacity = 0.105
-shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/grille_opacity = 0.050000002375
+shader_parameter/resolution = Vector2(720, 480)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
-shader_parameter/roll_speed = 2.0
-shader_parameter/roll_size = 5.63
+shader_parameter/roll_speed = 0.5
+shader_parameter/roll_size = 0.50000002375
 shader_parameter/roll_variation = 0.595
-shader_parameter/distort_intensity = 0.015
-shader_parameter/noise_opacity = 0.07
+shader_parameter/distort_intensity = 0.0050000002375
+shader_parameter/noise_opacity = 0.050000002375
 shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.06
+shader_parameter/static_noise_intensity = 0.010000000475
 shader_parameter/aberration = 4.75e-08
-shader_parameter/brightness = 1.4
+shader_parameter/brightness = 1.2
 shader_parameter/discolor = true
-shader_parameter/warp_amount = 0.303
+shader_parameter/warp_amount = 0.150000007125
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_intensity = 0.25
 shader_parameter/vignette_opacity = 0.328
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ubhog"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_ydva3"]
 
 [node name="FixLightsComputer" type="Node2D"]
 script = ExtResource("1_3po3b")
@@ -78,8 +78,8 @@ offset_bottom = 493.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_7amii")
-theme_override_colors/background_color = Color(0.290196, 0.141176, 0.501961, 1)
 theme_override_colors/font_color = Color(1, 0.556863, 0.501961, 1)
+theme_override_colors/background_color = Color(0.290196, 0.141176, 0.501961, 1)
 theme_override_font_sizes/font_size = 30
 text = "char state(char frame) {
 	return frame % 2 ? 255 : 0;
@@ -145,13 +145,13 @@ text = "Waiting for program to be sent"
 selection_enabled = true
 drag_and_drop_selection_enabled = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="ScreenShader" type="Sprite2D" parent="CanvasLayer"]
 top_level = true
 z_index = 2
 texture_filter = 1
-material = SubResource("ShaderMaterial_7ylfn")
+material = SubResource("ShaderMaterial_3po3b")
 scale = Vector2(1280, 720)
-texture = SubResource("CanvasTexture_ubhog")
+texture = SubResource("CanvasTexture_ydva3")
 centered = false
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]

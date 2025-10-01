@@ -1,14 +1,18 @@
-class_name Dialog
+class_name BaseDialog
 extends Resource
-
-@export var string_indices: PackedInt32Array
 
 signal finished_dialog
 
+func get_messages():
+	return []
+
 func run_dialog(textbox: Textbox):
 	textbox.show_textbox(true)
-	for index in string_indices:
-		textbox.run_dialog(index)
+	
+	var messages = get_messages()
+	for msg in messages:
+		textbox.run_message(msg)
 		await textbox.finished_presenting_dialog
+	
 	textbox.show_textbox(false)
 	finished_dialog.emit()

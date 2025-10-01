@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=4 uid="uid://de8w7s0ycv4ui"]
+
+[ext_resource type="Texture2D" uid="uid://dy38lup2skc2d" path="res://assets/sprites/puzzle_castle_guide.png" id="1_hl6xn"]
+[ext_resource type="Script" uid="uid://cfg2djafa3r51" path="res://scripts/puzzle_castle_world_exporter.gd" id="3_2dsrl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7i05"]
+texture = ExtResource("1_hl6xn")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w8711"]
+sources/2 = SubResource("TileSetAtlasSource_m7i05")
+
+[node name="PuzzleCastleTool" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+scale = Vector2(3, 3)
+
+[node name="Ground" type="TileMapLayer" parent="World"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0.33333334, 0)
+tile_map_data = PackedByteArray("AAABAAcAAgADAAAAAAACAAcAAgADAAAAAAADAAcAAgAAAAEAAAAEAAcAAgADAAAAAAAFAAcAAgADAAAAAAAGAAcAAgADAAAAAAAAAAAAAgADAAAAAAABAAAAAgADAAAAAAACAAAAAgADAAAAAAADAAAAAgADAAAAAAAEAAAAAgADAAAAAAAFAAAAAgADAAAAAAAGAAAAAgADAAAAAAAAAAEAAgADAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAADAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAGAAEAAgADAAAAAAAAAAIAAgADAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgABAAAAAAAEAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAGAAIAAgADAAAAAAAAAAMAAgADAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAAFAAMAAgAAAAAAAAAGAAMAAgADAAAAAAAAAAQAAgADAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgADAAAAAAAAAAUAAgADAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgADAAMAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgADAAAAAAAAAAYAAgADAAAAAAABAAYAAgAAAAAAAAACAAYAAgAAAAAAAAADAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAAYAAgADAAAAAAAAAAcAAgADAAAAAAA=")
+tile_set = SubResource("TileSet_w8711")
+
+[node name="PuzzleCastleWorldExporter" type="Node" parent="."]
+script = ExtResource("3_2dsrl")
+worldname = "worldF"

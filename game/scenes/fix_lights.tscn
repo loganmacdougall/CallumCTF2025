@@ -66,6 +66,7 @@ frame = 1
 frame_progress = 0.1258
 script = ExtResource("3_4b3qe")
 mad = true
+talking = null
 
 [node name="GenericButton" parent="PotatoBoss" instance=ExtResource("4_h5gt4")]
 anchors_preset = -1
