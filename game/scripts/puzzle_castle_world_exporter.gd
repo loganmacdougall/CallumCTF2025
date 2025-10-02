@@ -64,7 +64,7 @@ func import_world_bytes(buf: PackedByteArray):
 			var idx_x = idx % 4
 			var idx_y = idx / 4
 			
-			tiles.set_cell(Vector2i(x, y), 2, Vector2i(idx_x, idx_y))
+			tiles.set_cell(Vector2i(x, y), 0, Vector2i(idx_x, idx_y))
 	
 	return gameover
 	

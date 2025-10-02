@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b1yv8cptfedx3"]
+[gd_scene load_steps=26 format=4 uid="uid://b1yv8cptfedx3"]
 
 [ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_kbi8t"]
 [ext_resource type="Script" uid="uid://cpm7dgtgye1t3" path="res://scripts/puzzle_castle.gd" id="1_wc82b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qxtaarfg2oc" path="res://assets/sprites/computer.png" id="4_wyllh"]
 [ext_resource type="PackedScene" uid="uid://8n8wg816kpvx" path="res://components/puzzle_castle_connection.tscn" id="5_a278f"]
 [ext_resource type="Script" uid="uid://cfg2djafa3r51" path="res://scripts/puzzle_castle_world_exporter.gd" id="6_ej2wl"]
+[ext_resource type="Texture2D" uid="uid://3x0mx4dul30k" path="res://assets/sprites/puzzle_castle_tiles.png" id="7_f60q1"]
 [ext_resource type="Texture2D" uid="uid://ti1cinvb8yij" path="res://assets/sprites/traveller.png" id="8_wc82b"]
 [ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="9_wc82b"]
 
@@ -37,6 +38,25 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxjqs"]
+texture = ExtResource("7_f60q1")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ofi"]
 texture = ExtResource("2_ej2wl")
 0:0/0 = 0
@@ -58,6 +78,7 @@ texture = ExtResource("2_ej2wl")
 
 [sub_resource type="TileSet" id="TileSet_kbi8t"]
 sources/2 = SubResource("TileSetAtlasSource_q0ofi")
+sources/0 = SubResource("TileSetAtlasSource_qxjqs")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f60q1"]
 atlas = ExtResource("8_wc82b")

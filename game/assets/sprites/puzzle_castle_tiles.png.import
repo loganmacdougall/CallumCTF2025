@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlpvlyer4gmfj"
-path="res://.godot/imported/playback_play.png-b1d3438e86664e9dde2a8919958b95d2.ctex"
+uid="uid://3x0mx4dul30k"
+path="res://.godot/imported/puzzle_castle_tiles.png-195acbfe0bec2d6416865533d8f4c0ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/playback_play.png"
-dest_files=["res://.godot/imported/playback_play.png-b1d3438e86664e9dde2a8919958b95d2.ctex"]
+source_file="res://assets/sprites/puzzle_castle_tiles.png"
+dest_files=["res://.godot/imported/puzzle_castle_tiles.png-195acbfe0bec2d6416865533d8f4c0ad.ctex"]
 
 [params]
 
