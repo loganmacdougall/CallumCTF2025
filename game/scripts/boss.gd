@@ -4,6 +4,7 @@ extends AnimatedSprite2D
 @onready var textbox = %Textbox
 
 var d_explaing: PreparedDialog = load("res://resources/dialog/001_boss.tres")
+var d_solved: PreparedDialog = load("res://resources/dialog/002_boss.tres")
 
 var _mad = true
 @export var mad: bool:
@@ -32,8 +33,15 @@ var _talking = false
 			_talking = val
 			
 
+func _ready() -> void:
+	if GlobalState.lights_fixed:
+		mad = false
+
 func _on_button_pressed() -> void:
 	talking = true
-	d_explaing.run_dialog(textbox)
-	await d_explaing.finished_dialog
+	
+	var d = d_explaing if mad else d_solved
+	d.run_dialog(textbox)
+	await d.finished_dialog
+	
 	talking = false

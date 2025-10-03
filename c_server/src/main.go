@@ -114,7 +114,29 @@ func send_result(w http.ResponseWriter, output string, result int) {
 }
 
 func send_completion_message() {
-	http.Post("http://localhost:8080/enter_code", "text/plain", strings.NewReader("Fix_the_L1ghts_without_I_23485"))
+	url := "http://webserver:8080/enter_code"
+
+	req, err := http.NewRequest("POST", url, strings.NewReader("Fix_the_L1ghts_without_I_23485"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Match Godot headers
+	req.Header.Set("Content-Type", "text/plain")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Response Body:", string(body))
 }
 
 func main() {

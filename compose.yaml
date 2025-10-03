@@ -1,6 +1,8 @@
 services:
   webserver:
     build: ./webserver
+    environment:
+      - STEAMCODE="1234-XXXX-5678-XXXX"
     ports:
       - "8080:8080"
   c_server:

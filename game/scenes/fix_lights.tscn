@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjyitduk08s5w"]
+[gd_scene load_steps=14 format=3 uid="uid://bjyitduk08s5w"]
 
+[ext_resource type="Script" uid="uid://b6aykutuw8knb" path="res://scripts/fix_lights.gd" id="1_mxa1f"]
 [ext_resource type="Texture2D" uid="uid://7pehvsrx4dit" path="res://assets/sprites/lab_bg.png" id="1_vtv41"]
 [ext_resource type="Texture2D" uid="uid://6ip2s82a3hb1" path="res://assets/sprites/potato_boss.png" id="2_d3r1f"]
 [ext_resource type="Script" uid="uid://k312dt4jght4" path="res://scripts/boss.gd" id="3_4b3qe"]
 [ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="4_h5gt4"]
 [ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="6_0vfyd"]
 [ext_resource type="PackedScene" uid="uid://c5wduygpwhgea" path="res://components/textbox.tscn" id="6_b7vim"]
+[ext_resource type="Texture2D" uid="uid://dlpvlyer4gmfj" path="res://assets/sprites/playback_play.png" id="7_b7vim"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3r1f"]
 atlas = ExtResource("2_d3r1f")
@@ -49,6 +51,7 @@ animations = [{
 }]
 
 [node name="FixLights" type="Node2D"]
+script = ExtResource("1_mxa1f")
 
 [node name="LabBg" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -66,7 +69,6 @@ frame = 1
 frame_progress = 0.1258
 script = ExtResource("3_4b3qe")
 mad = true
-talking = null
 
 [node name="GenericButton" parent="PotatoBoss" instance=ExtResource("4_h5gt4")]
 anchors_preset = -1
@@ -91,4 +93,21 @@ invisable = true
 [node name="Textbox" parent="." instance=ExtResource("6_b7vim")]
 unique_name_in_owner = true
 
+[node name="PlaybackPlay" type="Sprite2D" parent="."]
+position = Vector2(50, 58)
+scale = Vector2(4, 4)
+texture = ExtResource("7_b7vim")
+flip_h = true
+
+[node name="BackButton" parent="." instance=ExtResource("6_0vfyd")]
+offset_left = 19.0
+offset_top = 29.0
+offset_right = 81.0
+offset_bottom = 86.0
+scene = "uid://by6yif3rcuo53"
+invisable = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="pressed" from="PotatoBoss/GenericButton" to="PotatoBoss" method="_on_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

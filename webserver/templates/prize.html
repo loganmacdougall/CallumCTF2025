@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/media/cursor.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/landing.css">
+  <link rel="stylesheet" href="styles/prize.css">
+  <title>Prize</title>
+</head>
+<body>
+  {{ if all .Completed }}
+    <section>
+      <p>Congratulations, you've been every single challenge! Here's your prize</p>
+      <pre><span>{{ .Code }}</span></pre>
+    </section>
+  {{ else }}
+    <section>
+      <p>How did you find this page?? Well, come back when you've completed all the challenges and then you'll actually see a prize</p>
+    </section>
+  {{ end }}
+</body>
+</html>

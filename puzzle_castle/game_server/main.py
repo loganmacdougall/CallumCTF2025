@@ -91,11 +91,17 @@ def send_regular_updates(conn: Connection, game: GameRunner, start_time: float):
       if time.time() - last_time_since_update < refresh_rate:
         continue
 
+      time_left = max(300 - (time.time() - start_time), 0)
+
+      if time_left == 0:
+        game.worlds[game.current_world].game_over = True
+
       response = {
         "status": "update",
         "state": base64.b64encode(game.worlds[game.current_world].export_view()).decode('utf-8'),
-        "time": max(60 - (time.time() - start_time), 0),
+        "time": time_left,
       }
+
 
       if len(game.console) > 0:
         response["console"] = [t for t in game.console]

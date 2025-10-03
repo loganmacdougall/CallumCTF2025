@@ -136,7 +136,6 @@ animations = [{
 }]
 
 [node name="PuzzleCastle" type="Node2D"]
-position = Vector2(0, -2)
 script = ExtResource("1_wc82b")
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -154,13 +153,13 @@ color = Color(1, 0.5568628, 0.5019608, 1)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Timer" type="Label" parent="UI"]
-offset_left = 463.0
+offset_left = 441.0
 offset_top = 14.0
-offset_right = 652.0
+offset_right = 671.0
 offset_bottom = 105.0
 theme = ExtResource("1_kbi8t")
 theme_override_font_sizes/font_size = 90
-text = "60.00"
+text = "300.00"
 
 [node name="TextEdit" type="TextEdit" parent="UI"]
 offset_left = 19.0
@@ -179,9 +178,9 @@ editable = false
 wrap_mode = 1
 
 [node name="ResetButton" parent="UI" instance=ExtResource("9_wc82b")]
-offset_left = 706.0
+offset_left = 759.0
 offset_top = 29.0
-offset_right = 846.0
+offset_right = 899.0
 offset_bottom = 94.0
 theme = ExtResource("1_kbi8t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)

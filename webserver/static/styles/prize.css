@@ -1,0 +1,17 @@
+p {
+  font-size: 48px;
+  text-align: center;
+  padding: 64px;
+}
+
+pre {
+  text-align: center;
+}
+
+pre span {
+  font-size: 40px;
+}
+
+section {
+  display: block;
+}

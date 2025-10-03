@@ -6,13 +6,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/media/cursor.png" type="image/x-icon">
   <link rel="stylesheet" href="/static/styles/global.css">
   <link rel="stylesheet" href="/static/styles/landing.css">
   <title>CallumCTF2025</title>
 </head>
 <body>
   <header>
-    <h1>The Great CTF of 2025!</h1>
+    <h1>The Great Callum CTF of 2025!</h1>
     <h2>By Logan MacDougall</h2>
     <div id="lights">
       <img class="light light-off" alt="lightbulb">
@@ -39,7 +40,7 @@
       </span>
     </div>
     <div>
-      <a class="play-button" href="/static/downloads/GreatCTF2025.exe" download>
+      <a class="play-button" href="/static/downloads/CallumCTF2025.exe" download>
         <h2>Play Now</h2>
       </a>
     </div>
@@ -47,12 +48,17 @@
   <section>
     {{range  $i, $complete := .Completed}}
     {{if $complete}}
-    <p>Challenge {{$i | add 1}}: completed</p>
-    {{else}}
-    <p>Challenge {{$i | add 1}}: incomplete</p>
-    {{end}}
-    {{end}}
+    <p>Challenge {{$i | add 1}}: Completed</p>
+    {{ else }}
+    <p>Challenge {{$i | add 1}}: Incomplete</p>
+    {{ end }}
+    {{ end }}
   </section>
+  {{ if all .Completed }}
+  <section>
+    <a href="/prize"><h2>Claim your prize!</h2></a>
+  </section>
+  {{ end }}
   <div class="big-gap"></div>
   <section class="riddle">
     <p>The riddle of the troll</p>

@@ -12,8 +12,8 @@ config_version=5
 
 config/name="CallumCTF2025"
 config/description="Using your computer knowledge, help the people with their tasks and receive the prize at the end."
-run/main_scene="uid://c7mc72v0glhkm"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
+run/main_scene="uid://by6yif3rcuo53"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -27,6 +27,9 @@ GlobalState="*res://scripts/state.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [dotnet]
 

@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqibeo3myyd0s"]
+
+[ext_resource type="Texture2D" uid="uid://dlpvlyer4gmfj" path="res://assets/sprites/playback_play.png" id="1_50clg"]
+[ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="2_ighnw"]
+[ext_resource type="Texture2D" uid="uid://davbrgu1efnx6" path="res://assets/sprites/troll.png" id="3_844qu"]
+[ext_resource type="Script" uid="uid://7xpiyfdk7blb" path="res://scripts/troll.gd" id="4_uqp1b"]
+[ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="5_ib5k6"]
+[ext_resource type="PackedScene" uid="uid://c5wduygpwhgea" path="res://components/textbox.tscn" id="6_np54w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbei8"]
+atlas = ExtResource("3_844qu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6skbd"]
+atlas = ExtResource("3_844qu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk3mj"]
+atlas = ExtResource("3_844qu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq4sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbei8")
+}],
+"loop": false,
+"name": &"Standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6skbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk3mj")
+}],
+"loop": true,
+"name": &"Talking",
+"speed": 6.0
+}]
+
+[node name="HuntTroll" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.77254903, 0.22745098, 0.6156863, 1)
+
+[node name="PlaybackPlay" type="Sprite2D" parent="."]
+position = Vector2(50, 58)
+scale = Vector2(4, 4)
+texture = ExtResource("1_50clg")
+flip_h = true
+
+[node name="BackButton" parent="." instance=ExtResource("2_ighnw")]
+offset_left = 19.0
+offset_top = 29.0
+offset_right = 81.0
+offset_bottom = 86.0
+scene = "uid://by6yif3rcuo53"
+invisable = true
+
+[node name="Troll" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_oq4sh")
+animation = &"Standing"
+autoplay = "Standing"
+script = ExtResource("4_uqp1b")
+
+[node name="GenericButton" parent="Troll" instance=ExtResource("5_ib5k6")]
+offset_left = -15.0
+offset_top = -17.375
+offset_right = 14.75
+offset_bottom = 17.375
+invisable = true
+
+[node name="Textbox" parent="." instance=ExtResource("6_np54w")]
+
+[connection signal="pressed" from="Troll/GenericButton" to="Troll" method="_on_generic_button_pressed"]
