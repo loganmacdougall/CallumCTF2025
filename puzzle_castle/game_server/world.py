@@ -1,3 +1,4 @@
+import os
 import struct
 
 class GameoverException(Exception):
@@ -8,13 +9,13 @@ class WorldCompleteException(Exception):
 
 
 class World:
-  WORLD_PATH = "puzzle_castle/world_data/{}.dat"
+  WORLD_PATH = os.environ["WORLDS"] if "WORLDS" in os.environ else "puzzle_castle/world_data/{}.dat"
 
   def __init__(self, filename: str):
     self.init_args = [filename]
 
     self.world_view: int = 9
-    with open(self.WORLD_PATH.format((filename)), 'rb') as f:
+    with open(self.WORLD_PATH.format(filename), 'rb') as f:
       self.game_over = False
       self.width = struct.unpack('<I', f.read(4))[0]
       self.height = struct.unpack('<I', f.read(4))[0]
@@ -175,7 +176,7 @@ class World:
 
   def world_tick(self) -> None:
     self.tick += 1
-    
+
     player_tile_idx = self.get_player_position_index()
 
     if player_tile_idx in self.run_on_stand:

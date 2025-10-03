@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"strings"
 )
 
 type Data struct {
@@ -24,6 +25,7 @@ type Data struct {
 3 - COMPILED BUT CRASH
 4 - INPUT PARSE ERROR
 */
+
 type Result struct {
 	Output string
 	Result int
@@ -67,6 +69,7 @@ func submit_code(w http.ResponseWriter, r *http.Request) {
 	save_current_pattern()
 
 	if bytes.Equal(out, solution) {
+		send_completion_message()
 		send_result(w, "Program uploaded with correct pattern", 0)
 	} else {
 		send_result(w, "Program uploaded but with incorrect pattern", 2)
@@ -108,6 +111,10 @@ func send_result(w http.ResponseWriter, output string, result int) {
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func send_completion_message() {
+	http.Post("http://localhost:8080/enter_code", "text/plain", strings.NewReader("Fix_the_L1ghts_without_I_23485"))
 }
 
 func main() {

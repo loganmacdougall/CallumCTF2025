@@ -7,10 +7,10 @@ class World5(World):
   sign_message = [
     "The ground is riddled with spikes ahead.",
     "The area ahead is a 7x7 square of hidden traps.",
-    "A spike will be active is determined by this function:\n(hash((x, y, t)) % 10) < 3"
-    "x and y are the coordinates of the spike\nTop Left: (0,0), Bottom Right: (6,6)"
-    "t is the number of code actions taken since entering the world\n(up, down, left, right, interact)"
-    "Make it across safely"
+    "A spike will be active is determined by this function:\n(hash((x, y, t)) % 10) < 3",
+    "x and y are the coordinates of the spike\nTop Left: (0,0), Bottom Right: (6,6)",
+    "t is the number of code actions taken since entering the world\n(up, down, left, right, interact)",
+    "Make it across safely",
   ]
   
   def __init__(self):

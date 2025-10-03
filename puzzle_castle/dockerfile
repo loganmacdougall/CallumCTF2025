@@ -1,8 +1,10 @@
-FROM python:3.13-slim
+FROM python:3.13
+
+ENV WORLDS="world_data/{}.dat"
 
 WORKDIR /app
-COPY . /app
+COPY . .
 
 EXPOSE 8083
 
-CMD ["python", "game_server/main.py"]
+CMD ["python", "-u", "./game_server/main.py"]

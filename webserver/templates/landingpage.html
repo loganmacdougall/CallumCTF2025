@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles/global.css">
   <link rel="stylesheet" href="/static/styles/landing.css">
   <title>CallumCTF2025</title>
 </head>
@@ -24,6 +25,39 @@
       <img class="light light-off" alt="lightbulb">
     </div>
   </header>
+
+  <section>
+    <div>
+      <span>
+        In this puzzle game of pure madness, you will have to overcome <b>three</b> challenges that will knock you fingers off! These challenges involve the following:
+        <ul>
+          <li>Fixing the lights of this very website (or was I suppose to do that)</li>
+          <li>Getting through the various tricks and traps of the impossible castle</li>
+          <li>Uncovering the secert message behind our neighbourly troll's riddle</li>
+        </ul>
+        Do you think you can take on every challenge and bring home the prize for yourself?
+      </span>
+    </div>
+    <div>
+      <a class="play-button" href="/static/downloads/GreatCTF2025.exe" download>
+        <h2>Play Now</h2>
+      </a>
+    </div>
+  </section>
+  <section>
+    {{range  $i, $complete := .Completed}}
+    {{if $complete}}
+    <p>Challenge {{$i | add 1}}: completed</p>
+    {{else}}
+    <p>Challenge {{$i | add 1}}: incomplete</p>
+    {{end}}
+    {{end}}
+  </section>
+  <div class="big-gap"></div>
+  <section class="riddle">
+    <p>The riddle of the troll</p>
+    <a href="/static/downloads/riddle.c" download>riddle.c</a>
+  </section>
   <script src="/static/js/lights.js"></script>
 </body>
 </html>

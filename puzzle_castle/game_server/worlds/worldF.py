@@ -7,7 +7,7 @@ class WorldF(World):
   sign_message = [
     "You've surpassed all my challenges!",
     "You must now take this to the realm of the web and enter the following code:",
-    "'CASTLE_CRASHER_9457'"
+    "Castle_n0t_impossib1e_9457"
   ]
   
   def __init__(self):

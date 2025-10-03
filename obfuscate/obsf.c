@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 
-char m[] = "python3 -c \"import sys,codecs,base64;m=\'correct\'+chr(33);d=base64.decodebytes(codecs.decode(b\'x\\x9c\\x0bqw+\\x8d2\\x0e\\xcb\\x88\\xaa\\xf2KKt\\xb7,\\x8f0J/Ov\\xb3\\xcc\\x8a\\x0c75\\x880\\xf63\\x081v\\xb4\\xe5\\x02\\x00\\xe91\\x0bc\',\'zlib_codec\'));f=open(\'HXVNFIEFJEKS.txt\',\'w\');f.write(\'No argument provided\') if len(sys.argv)<2 else (f.write(m.title()) if sys.argv[1].encode(\'utf-8\')==d else f.write(f\'in{m}\'.title()))\"";
-char k[] = "last one before the end";
+char m[100000];
+char k[] = "Solve this riddle and find the code";
 
 void x()
 {
@@ -23,23 +23,37 @@ void x()
     }
   }
 }
-
-char p[512];
+void r(char* n) {
+  char e;
+  int i;
+  FILE *f = fopen(n, "r");
+  for (int i = 0; (e = fgetc(f)) != EOF; i++) {
+    m[i] = e;
+  }
+  m[i] = 0;
+  fclose(f);
+}
 
 int main(int c, char** v)
 {
-  x(m, k);
+  int i;
 
-  printf("%s\n", m);
+  r("c_to_c2.c");
+  x();
 
-  printf("{");
-  for (int i = 0; m[i] != '\0'; i++)
+  printf("\n\n%d (should be zero)\n\n", m[sizeof(m)-1]);
+
+  FILE *f = fopen("bytes.txt", "w");
+  fprintf(f, "{");
+  for (i = 0; m[i] != '\0'; i++)
   {
     if (i != 0)
-      printf(",");
-    printf("%d", m[i]);
+      fprintf(f, ",");
+    fprintf(f, "%d", m[i]);
   }
-  printf(",0}\n");
+  fprintf(f, "};\n");
+  fclose(f);
 
-  // system(p)
+  x();
+  printf("%s\n", m);
 }

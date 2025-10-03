@@ -2,23 +2,23 @@
 from connection import ConnectionSocket, Connection
 from game_runner import GameRunner
 from ast_validator import analyze_code
-from world import World
 from worlds.world1 import World1
 from worlds.world2 import World2
 from worlds.world3 import World3
 from worlds.world4 import World4
 from worlds.world5 import World5 
 from worlds.worldF import WorldF 
+import os
 import json
 import base64
 import time
 import threading
 
-HOST = "localhost"
+HOST = "0.0.0.0"
 PORT = 8083
 
 worlds = [
-   World1(), World2(), World3(), World4(), World5(), WorldF()
+  World1(), World2(), World3(), World4(), World5(), WorldF()
 ]
 
 def run_game(conn: Connection):
@@ -114,6 +114,7 @@ def send_regular_updates(conn: Connection, game: GameRunner, start_time: float):
       time.sleep(0.01)
 
 def main():
+    print(f"Setting up server with for {HOST}:{PORT}")
     with ConnectionSocket(HOST, PORT) as server:
         print(f"Server listening on {HOST}:{PORT}")
         while True:
@@ -125,4 +126,4 @@ def main():
             print(f"[MAIN] started thread {thread.ident}; active threads: {threading.active_count()}")
 
 if __name__ == "__main__":
-    main()
+  main()

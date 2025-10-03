@@ -1,16 +1,17 @@
 html {
-  background: #051f39
+  background: var(--dark-2)
 }
 
 body {
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #051f39;
+  color: var(--dark-2);
 }
 
 header {
-  background: #c53a9d;
+  background: var(--light-2);
+  margin: 1em;
   text-align: center;
 }
 
@@ -41,4 +42,45 @@ header h2 {
 
 .light-off {
   content: url("/static/media/lightbulb_off.png");
+}
+
+section {
+  background: var(--light-2);
+  margin: 1em;
+  padding: 1em;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+section div {
+  display: grid;
+  width: 50%;
+  place-items: center;
+}
+
+.play-button > h2 {
+  border: 24px solid var(--dark-2);
+  border-radius: 1em;
+}
+
+a {
+  color: var(--dark-2);
+}
+
+a > h2 {
+  text-align: center;
+  font-size: 72px;
+  padding: 36px;
+}
+
+.big-gap {
+  height: 1000px;
+  background: transparent;
+}
+
+.riddle {
+  display: block;
+  text-align: center;
 }
