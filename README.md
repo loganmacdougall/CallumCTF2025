@@ -10,7 +10,7 @@ The following are pre-requisites to playing this CTF
  - GNU Tools (gcc)
  - Python
 
-The CTF is restricted to windows but if demand to make it cross-platform, it can be done to make the CTF cross-platform
+The CTF works with Windows and Linux. If there's any issue running the main executable (without revealing too much about it), you can open the game folder of this repo, open the project, and press the play button on the opened project. However, it is recommend to run the executable if possible.
 
 You can call the following commands to start the CTF
 
