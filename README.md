@@ -28,7 +28,7 @@ There are areas in the CTF where self DDos might be possible. Much effort went i
 
 ```
 docker compose up c_server --build -d # Challenge 1
-docker compose up puzzle_castle --build -d # Challenge 1
+docker compose up puzzle_castle --build -d # Challenge 2
 ```
 
 It's also possibly the case that there are several minor bugs throughout this challenge. To that I say I do not care unless it's really taking away from the enjoyment of the CTF. This is meant to be a birthday gift and not production code.
