@@ -1,0 +1,44 @@
+FROM alpine:latest
+
+# Install packages
+RUN apk add --no-cache \
+    openssh \
+    python3 \
+    py3-pip \
+    py3-virtualenv \
+    build-base \
+    git \
+    curl \
+    bash \
+    vim \
+    emacs \
+    tmux \
+    screen \
+    ca-certificates \
+    shadow  # for usermod/chpasswd
+
+# Create the troll user and set password
+RUN adduser -D troll && \
+    echo "troll:bridgelover47" | chpasswd && \
+    usermod -s /bin/bash troll
+
+# Allow SSH login for the new user
+RUN mkdir -p /home/troll/.ssh && \
+    chown -R troll:troll /home/troll/.ssh && \
+    chmod 700 /home/troll/.ssh
+
+# Configure SSH server
+RUN ssh-keygen -A && \
+    echo "PermitRootLogin no" >> /etc/ssh/sshd_config && \
+    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config && \
+    echo "AllowUsers troll" >> /etc/ssh/sshd_config
+
+
+WORKDIR /home/troll
+COPY riddle.c .
+
+# Expose SSH port
+EXPOSE 22
+
+# Start SSH daemon
+CMD ["/usr/sbin/sshd", "-D"]

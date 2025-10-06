@@ -4,10 +4,11 @@ The lights should match the sequence on the picture behind me
 But our blasted server has an ancient architecture and he can't make it work within the restrictions of the machine
 If you could, help my useless intern write some C code
 Think you can solve my riddle!
-It's somewhere on our website. I'm sure you'll find it
-Go ahead and try, only then will I let my neighbours cross my bridge
-And that's saying something, cause I hate my neighbours
-Wow! You actually got the darn thing to work
+I have the file safely kept in my ssh server running under my bridge on port 8084.
+I dare you to solve it! Only then will I let my neighbours cross my bridge.
+And that's saying something, cause I hate my neighbours.
+Wow! You actually got the darn thing to work.
 Thanks for your help! Yer a life saver!
 Since you helped, feel free to make the light look anyway you like.
-With your code, we can always fix now anyway. Go crazy
+With your code, we can always fix now anyway. Go crazy!
+my username is "troll" and my password is "bridgelover47".

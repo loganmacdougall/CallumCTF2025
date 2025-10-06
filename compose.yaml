@@ -5,15 +5,28 @@ services:
       - STEAMCODE="1234-XXXX-5678-XXXX"
     ports:
       - "8080:8080"
-  c_server:
+    restart: unless-stopped
+  challenge1:
     build: ./c_server
     ports:
       - "8081:8081"
+    restart: unless-stopped
   #city_game_server:
   #  build: ./city_game_server
   #  ports:
   #    - "8082:8082"
-  puzzle_castle:
+  challenge2:
     build: ./puzzle_castle
     ports:
       - "8083:8083"
+    restart: unless-stopped
+  challenge3:
+    build: ./obfuscate
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PASSWORD_ACCESS=true
+      - USER_PASSWORD=bridgelover47
+    ports:
+      - "8084:22"
+    restart: unless-stopped

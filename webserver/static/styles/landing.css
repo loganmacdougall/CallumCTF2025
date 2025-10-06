@@ -9,6 +9,43 @@ body {
   color: var(--dark-2);
 }
 
+.outside-p {
+  color: var(--light-2);
+  text-align: center;
+  margin: 2em 1em;
+}
+
+.challenges-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.challenge-container {
+  background: var(--light-2);
+  border-radius: 5px;
+  padding: 48px;
+  text-align: center;
+  max-width: 256px;
+  width: 17%;
+}
+
+.challenge-text {
+  color: var(--dark-1);
+  font-size: 30px;
+  margin: 0;
+}
+
+.challenge-status {
+  color: var(--dark-1);
+}
+
+.challenge-container h2 {
+  color: var(--dark-1);
+  font-size: 64px;
+  margin: 0px;
+}
+
+
 header {
   background: var(--light-2);
   margin: 1em;
@@ -75,23 +112,22 @@ a > h2 {
   padding: 36px;
 }
 
-.big-gap {
-  height: 1000px;
-  background: transparent;
+.playnow-container {
+  margin: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
 }
 
-.riddle {
-  display: block;
+.download-button {
+  background: var(--light-2);
+  width: 148px;
+  padding: 18px;
+  border-radius: 64px;
   text-align: center;
 }
 
-.executables {
-  font-size: 30px;
-}
-
-.executables a {
-  border: 4px solid var(--dark-2);
-  border-radius: 30px;
-  margin: 8px;
-  padding: 8px 24px;
+.play-text {
+  color: var(--light-2)
 }

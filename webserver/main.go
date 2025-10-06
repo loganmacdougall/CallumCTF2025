@@ -11,13 +11,19 @@ import (
 )
 
 type GlobalState struct {
-	Completed [3]bool
-	Code      string
+	Completed    [3]bool
+	Descriptions [3]string
+	Code         string
 }
 
 var global_state = GlobalState{
 	Completed: [3]bool{false, false, false},
-	Code:      "XXXX-XXXX-XXXX-XXXX",
+	Descriptions: [3]string{
+		"Fixing the lights of this very website",
+		"Complete the puzzles in the impossible castle",
+		"Solve the troll's riddle written in C",
+	},
+	Code: "XXXX-XXXX-XXXX-XXXX",
 }
 
 const code1 = "Fix_the_L1ghts_without_I_23485"

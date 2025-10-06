@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_x2ii7")
-string_indices = PackedInt32Array(6, 7, 8, 9)
+string_indices = PackedInt32Array(6, 7, 14, 8, 9)
 metadata/_custom_type_script = "uid://ppwc22ksjwtu"

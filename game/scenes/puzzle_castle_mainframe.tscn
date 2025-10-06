@@ -154,6 +154,21 @@ display(text: str) - Displays the text to the game (max 50 lines per action)
 print(text: str) - Prints the text to the console (max 50 lines per action)
 [/ul]
 
+Each of the \"tile\" functions will return the id of a tile. Here is a list of tiles and their respective ids:
+
+[ul]
+1  - Ground
+2  - Sign
+4  - Wall
+5  - Door Open
+6  - Door Closed
+3  - Lever Off
+7  - Lever On
+8  - Spike
+15 - Stairs
+16 - Level Spawn
+[/ul]
+
 You can change any of the existing actions, or you can use one of the number actions which are by default unused:
 [ul]
 action_1 - (1)

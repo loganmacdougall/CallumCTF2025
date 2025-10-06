@@ -27,45 +27,34 @@
     </div>
   </header>
 
-  <section>
-    <div>
-      <span>
-        In this puzzle game of pure madness, you will have to overcome <b>three</b> challenges that will knock you fingers off! These challenges involve the following:
-        <ul>
-          <li>Fixing the lights of this very website (or was I suppose to do that)</li>
-          <li>Getting through the various tricks and traps of the impossible castle</li>
-          <li>Uncovering the secert message behind our neighbourly troll's riddle</li>
-        </ul>
-        Do you think you can take on every challenge and bring home the prize for yourself?
-      </span>
-    </div>
-    <div>
-      <h2>Play Now</h2>
-      <div class="executables">
-        <a class="play-button" href="/static/downloads/CallumCTF2025.exe" download>Windows</a>
-        <a class="play-button" href="/static/downloads/CallumCTF2025.x86_64" download>Linux</a>
-      </div>
-    </div>
-  </section>
-  <section>
+  <p class="outside-p">The puzzle game of pure madness......</p>
+
+  <div class="challenges-container">
+    {{ if all .Completed }}
+    <section>
+      <a href="/prize"><h2>Claim your prize!</h2></a>
+    </section>
+    {{else}}
     {{range  $i, $complete := .Completed}}
-    {{if $complete}}
-    <p>Challenge {{$i | add 1}}: Completed</p>
-    {{ else }}
-    <p>Challenge {{$i | add 1}}: Incomplete</p>
+    <div class="challenge-container">
+      <p class="challenge-text">Challenge</p>
+      <h2>{{$i | add 1}}</h2>
+      <p class="challenge-desc">{{ index $.Descriptions $i }}</p>
+      {{if $complete}}
+      <p class="challenge-status">Complete</p>
+      {{ else }}
+      <p class="challenge-status" >Incomplete</p>
+      {{ end }}
+    </div>
     {{ end }}
     {{ end }}
-  </section>
-  {{ if all .Completed }}
-  <section>
-    <a href="/prize"><h2>Claim your prize!</h2></a>
-  </section>
-  {{ end }}
-  <div class="big-gap"></div>
-  <section class="riddle">
-    <p>The riddle of the troll</p>
-    <a href="/static/downloads/riddle.c" download>riddle.c</a>
-  </section>
+  </div>
+
+  <div class="playnow-container">
+    <a class="download-button" href="/static/downloads/CallumCTF2025.exe" download>Windows</a>
+    <h2 class="play-text">Play Now</h2>
+    <a class="download-button" href="/static/downloads/CallumCTF2025.x86_64" download>Linux</a>
+  </div>
   <script src="/static/js/lights.js"></script>
 </body>
 </html>
