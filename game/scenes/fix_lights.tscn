@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjyitduk08s5w"]
+[gd_scene load_steps=29 format=3 uid="uid://bjyitduk08s5w"]
 
 [ext_resource type="Script" uid="uid://b6aykutuw8knb" path="res://scripts/fix_lights.gd" id="1_mxa1f"]
 [ext_resource type="Texture2D" uid="uid://7pehvsrx4dit" path="res://assets/sprites/lab_bg.png" id="1_vtv41"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="6_0vfyd"]
 [ext_resource type="PackedScene" uid="uid://c5wduygpwhgea" path="res://components/textbox.tscn" id="6_b7vim"]
 [ext_resource type="Texture2D" uid="uid://dlpvlyer4gmfj" path="res://assets/sprites/playback_play.png" id="7_b7vim"]
+[ext_resource type="Texture2D" uid="uid://4bldbjiw3ad4" path="res://assets/sprites/pattern_picture.png" id="9_fx6p2"]
+[ext_resource type="Script" uid="uid://cqqaswnmkpwbx" path="res://scripts/pattern.gd" id="10_ednyq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3r1f"]
 atlas = ExtResource("2_d3r1f")
@@ -48,6 +50,103 @@ animations = [{
 "loop": true,
 "name": &"mad",
 "speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkypi"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(0, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exiry"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(105, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_667xl"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(210, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03njj"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(315, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w6j1"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(420, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46ctn"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(525, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paf7n"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(630, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsc1s"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(735, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhisl"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(840, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfx3e"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(945, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j35f4"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(1050, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0l4c"]
+atlas = ExtResource("9_fx6p2")
+region = Rect2(0, 0, 105, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mc6af"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkypi")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exiry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_667xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03njj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w6j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46ctn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paf7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsc1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhisl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfx3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j35f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0l4c")
+}],
+"loop": false,
+"name": &"show_order",
+"speed": 2.0
 }]
 
 [node name="FixLights" type="Node2D"]
@@ -109,5 +208,21 @@ invisable = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="Pattern" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(991, 188)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_mc6af")
+autoplay = "default"
+script = ExtResource("10_ednyq")
+
+[node name="GenericButton" parent="Pattern" instance=ExtResource("4_h5gt4")]
+offset_left = -52.75
+offset_top = -32.5
+offset_right = 52.5
+offset_bottom = 32.5
+invisable = true
+
 [connection signal="pressed" from="PotatoBoss/GenericButton" to="PotatoBoss" method="_on_button_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Pattern/GenericButton" to="Pattern" method="_on_pressed"]

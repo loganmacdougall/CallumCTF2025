@@ -10,5 +10,7 @@ And that's saying something, cause I hate my neighbours.
 Wow! You actually got the darn thing to work.
 Thanks for your help! Yer a life saver!
 Since you helped, feel free to make the light look anyway you like.
-With your code, we can always fix now anyway. Go crazy!
+With your code, we can always fix it now anyway. Go crazy!
 my username is "troll" and my password is "bridgelover47".
+ssh troll@localhost -p 8084
+*whispered in binary*

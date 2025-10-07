@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqibeo3myyd0s"]
+[gd_scene load_steps=18 format=3 uid="uid://dqibeo3myyd0s"]
 
 [ext_resource type="Texture2D" uid="uid://dlpvlyer4gmfj" path="res://assets/sprites/playback_play.png" id="1_50clg"]
+[ext_resource type="Texture2D" uid="uid://dcnce3waex3m8" path="res://assets/sprites/troll_bg.png" id="1_ighnw"]
 [ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="2_ighnw"]
 [ext_resource type="Texture2D" uid="uid://davbrgu1efnx6" path="res://assets/sprites/troll.png" id="3_844qu"]
 [ext_resource type="Script" uid="uid://7xpiyfdk7blb" path="res://scripts/troll.gd" id="4_uqp1b"]
 [ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="5_ib5k6"]
 [ext_resource type="PackedScene" uid="uid://c5wduygpwhgea" path="res://components/textbox.tscn" id="6_np54w"]
+[ext_resource type="Texture2D" uid="uid://dn74v52qdgu4" path="res://assets/sprites/floating_computer.png" id="8_844qu"]
+[ext_resource type="Script" uid="uid://dhkehlwmthdpd" path="res://scripts/floating_computer.gd" id="9_ib5k6"]
+[ext_resource type="Script" uid="uid://bpbsyudtix1ng" path="res://scripts/generic_button.gd" id="10_np54w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbei8"]
 atlas = ExtResource("3_844qu")
@@ -41,7 +45,35 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqp1b"]
+atlas = ExtResource("8_844qu")
+region = Rect2(8, 0, 8, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib5k6"]
+atlas = ExtResource("8_844qu")
+region = Rect2(0, 0, 8, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_np54w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqp1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib5k6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [node name="HuntTroll" type="Node2D"]
+
+[node name="TrollBg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(8, 8)
+texture = ExtResource("1_ighnw")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -70,7 +102,7 @@ invisable = true
 
 [node name="Troll" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(640, 360)
+position = Vector2(792, 264)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_oq4sh")
 animation = &"Standing"
@@ -86,4 +118,22 @@ invisable = true
 
 [node name="Textbox" parent="." instance=ExtResource("6_np54w")]
 
+[node name="FloatingComputer" type="AnimatedSprite2D" parent="."]
+position = Vector2(1232, 396)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_np54w")
+autoplay = "default"
+frame_progress = 0.22598614
+script = ExtResource("9_ib5k6")
+
+[node name="GenericButton" type="Button" parent="FloatingComputer"]
+offset_left = -4.5
+offset_top = -9.0
+offset_right = 4.375
+offset_bottom = 8.75
+script = ExtResource("10_np54w")
+invisable = true
+metadata/_custom_type_script = "uid://bpbsyudtix1ng"
+
 [connection signal="pressed" from="Troll/GenericButton" to="Troll" method="_on_generic_button_pressed"]
+[connection signal="pressed" from="FloatingComputer/GenericButton" to="FloatingComputer" method="_on_button_pressed"]
