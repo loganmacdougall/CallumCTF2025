@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://by6yif3rcuo53"]
+[gd_scene load_steps=13 format=3 uid="uid://by6yif3rcuo53"]
 
 [ext_resource type="Theme" uid="uid://0xoim3xiwd1f" path="res://assets/main_theme.tres" id="1_4ignj"]
 [ext_resource type="Script" uid="uid://4rcoy8ai77og" path="res://scripts/title_screen.gd" id="1_4rr2b"]
 [ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="1_p6dhs"]
 [ext_resource type="Shader" uid="uid://cj04pl54dt3cm" path="res://shaders/title.gdshader" id="2_p6dhs"]
 [ext_resource type="Texture2D" uid="uid://cevdjq5hyug64" path="res://assets/sprites/bg_tile.png" id="2_wosw1"]
+[ext_resource type="PackedScene" uid="uid://002owmvdaqs2" path="res://components/check_completed.tscn" id="2_yql1r"]
 [ext_resource type="PackedScene" uid="uid://cp6dko2yjjxr7" path="res://components/generic_button.tscn" id="5_b3w7a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pyl7j"]
@@ -49,6 +50,8 @@ corner_radius_bottom_left = 8
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_4rr2b")
+
+[node name="CheckCompleted" parent="." instance=ExtResource("2_yql1r")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

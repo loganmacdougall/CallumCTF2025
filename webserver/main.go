@@ -127,6 +127,18 @@ func code_check(w http.ResponseWriter, r *http.Request) {
 	}
 
 	c := r.URL.Query().Get("c")
+
+	if c == "" {
+		for _, completed := range global_state.Completed {
+			if completed {
+				io.WriteString(w, "1")
+			} else {
+				io.WriteString(w, "0")
+			}
+		}
+		return
+	}
+
 	num, err := strconv.Atoi(c)
 	if err != nil || num < 1 || num > 3 {
 		io.WriteString(w, "false")

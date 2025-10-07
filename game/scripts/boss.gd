@@ -34,8 +34,9 @@ var _talking = false
 			
 
 func _ready() -> void:
-	if GlobalState.lights_fixed:
+	if GlobalState.challenges_completed[0]:
 		mad = false
+		
 
 func _on_button_pressed() -> void:
 	talking = true
@@ -45,3 +46,7 @@ func _on_button_pressed() -> void:
 	await d.finished_dialog
 	
 	talking = false
+
+func _on_check_completed_code_check_finished() -> void:
+	if GlobalState.challenges_completed[0]:
+		mad = false

@@ -23,9 +23,9 @@ Once the servers are running, you can enter your browser and go to port `http://
 There are areas in the CTF where self DDos might be possible. Much effort went into preventing it when possible but in case it's not, I will provided the commands to restart the docker container here
 
 ```
-docker compose up challenge1 --build -d # Challenge 1
-docker compose up challenge2 --build -d # Challenge 2
-docker compose up challenge3 --build -d # Challenge 3
+docker compose restart challenge1 # Challenge 1
+docker compose restart challenge2 # Challenge 2
+docker compose restart challenge3 # Challenge 3
 ```
 
 It's also possibly the case that there are several minor bugs throughout this challenge. To that I say I do not care unless it's really taking away from the enjoyment of the CTF. This is meant to be a birthday gift and not production code.

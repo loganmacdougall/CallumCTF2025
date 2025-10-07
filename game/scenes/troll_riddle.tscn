@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqibeo3myyd0s"]
+[gd_scene load_steps=19 format=3 uid="uid://dqibeo3myyd0s"]
 
 [ext_resource type="Texture2D" uid="uid://dlpvlyer4gmfj" path="res://assets/sprites/playback_play.png" id="1_50clg"]
 [ext_resource type="Texture2D" uid="uid://dcnce3waex3m8" path="res://assets/sprites/troll_bg.png" id="1_ighnw"]
+[ext_resource type="PackedScene" uid="uid://002owmvdaqs2" path="res://components/check_completed.tscn" id="1_np54w"]
 [ext_resource type="PackedScene" uid="uid://b0k3ax6phw487" path="res://components/scene_switch_button.tscn" id="2_ighnw"]
 [ext_resource type="Texture2D" uid="uid://davbrgu1efnx6" path="res://assets/sprites/troll.png" id="3_844qu"]
 [ext_resource type="Script" uid="uid://7xpiyfdk7blb" path="res://scripts/troll.gd" id="4_uqp1b"]
@@ -69,6 +70,8 @@ animations = [{
 
 [node name="HuntTroll" type="Node2D"]
 
+[node name="CheckCompleted" parent="." instance=ExtResource("1_np54w")]
+
 [node name="TrollBg" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(640, 360)
@@ -135,5 +138,6 @@ script = ExtResource("10_np54w")
 invisable = true
 metadata/_custom_type_script = "uid://bpbsyudtix1ng"
 
+[connection signal="request_completed" from="CheckCompleted" to="Troll" method="_on_check_completed_request_completed"]
 [connection signal="pressed" from="Troll/GenericButton" to="Troll" method="_on_generic_button_pressed"]
 [connection signal="pressed" from="FloatingComputer/GenericButton" to="FloatingComputer" method="_on_button_pressed"]

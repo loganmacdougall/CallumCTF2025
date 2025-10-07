@@ -3,6 +3,7 @@ extends Node2D
 @onready var output_label = %RichTextLabel
 @onready var codebox = %CodeEdit
 @onready var http_req = %HTTPRequest
+@onready var code_check = $CheckCompleted
 
 const headers = ["Content-Type: application/json"]
 const url = "http://localhost:8081/submit_code"
@@ -38,6 +39,7 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	else:
 		var json = JSON.parse_string(body.get_string_from_utf8())
 		output_label.text = json["Output"]
+		code_check.check()
 
 
 func _on_code_edit_text_changed() -> void:

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PreparedDialog" load_steps=2 format=3 uid="uid://cksknqxuwjq0l"]
+
+[ext_resource type="Script" uid="uid://ppwc22ksjwtu" path="res://scripts/prepareddialog.gd" id="1_p0x4j"]
+
+[resource]
+script = ExtResource("1_p0x4j")
+string_indices = PackedInt32Array(17, 18)
+metadata/_custom_type_script = "uid://ppwc22ksjwtu"

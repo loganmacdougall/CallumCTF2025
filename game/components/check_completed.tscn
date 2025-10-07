@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://002owmvdaqs2"]
+
+[ext_resource type="Script" uid="uid://fsj2j5n5n2yy" path="res://scripts/check_completed.gd" id="1_dtg0n"]
+
+[node name="CheckCompleted" type="HTTPRequest"]
+download_chunk_size = 256
+timeout = 0.1
+script = ExtResource("1_dtg0n")
+
+[connection signal="request_completed" from="." to="." method="_on_send_completed"]
