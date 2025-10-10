@@ -1,7 +1,6 @@
 p {
-  font-size: 48px;
+  font-size: 40px;
   text-align: center;
-  padding: 64px;
 }
 
 pre {
@@ -9,9 +8,39 @@ pre {
 }
 
 pre span {
-  font-size: 40px;
+  font-size: 24px;
 }
 
 section {
   display: block;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.color-shadow {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.color-shadow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/media/sunset.png") center / cover no-repeat;
+  filter: blur(30px);
+  transform: scale(1.08);
+  z-index: -1;
+  opacity: 0.7;
+  border-radius: 12px;
+}
+
+img {
+	max-height: 600px;
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
 }
