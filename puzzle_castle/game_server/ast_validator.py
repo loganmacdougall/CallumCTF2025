@@ -31,7 +31,7 @@ ALLOWED_NODES = {
     ast.arguments, ast.BitOr, ast.BitAnd, ast.BitXor, ast.FloorDiv, ast.Invert,
     ast.In, ast.NotIn, ast.Not, ast.And, ast.Or, ast.Yield, ast.YieldFrom, ast.Await,
     ast.Slice, ast.Starred, ast.arg, ast.Nonlocal, ast.comprehension,
-    ast.JoinedStr, ast.FormattedValue
+    ast.JoinedStr, ast.FormattedValue, ast.ClassDef
 }
 
 class UnsafeCodeError(Exception):
@@ -77,7 +77,8 @@ SAFE_BUILTINS: Dict[str, Any] = {
     "len": len, "range": range, "enumerate": enumerate, "zip": zip,
     "map": map, "filter": filter, "sorted": sorted, "reversed": reversed,
     "all": all, "any": any, "next": next, "iter": iter, "repr": repr,
-    "divmod": divmod, "pow": pow, "hash": hash
+    "divmod": divmod, "pow": pow, "hash": hash, "__build_class__": __build_class__,
+    "__name__": "mainframe"
 }
 
 SAFE_MODULES = {
