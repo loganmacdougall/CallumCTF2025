@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -10,6 +9,9 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"reflect"
+	"bufio"
+	"strconv"
 )
 
 type Data struct {
@@ -31,7 +33,7 @@ type Result struct {
 	Result int
 }
 
-var solution []byte
+var solution []int
 
 func submit_code(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
@@ -67,13 +69,40 @@ func submit_code(w http.ResponseWriter, r *http.Request) {
 	}
 
 	save_current_pattern()
+	out_ints, _ := ReadBinaryFile("./challenge/lights.out")
 
-	if bytes.Equal(out, solution) {
+	if reflect.DeepEqual(out_ints, solution) {
 		send_completion_message()
 		send_result(w, "Program uploaded with correct pattern", 0)
 	} else {
 		send_result(w, "Program uploaded but with incorrect pattern", 2)
 	}
+}
+
+func ReadBinaryFile(filename string) ([]int, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	var nums []int
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+
+		val, err := strconv.ParseInt(line, 2, 0)
+		if err != nil {
+			return nil, fmt.Errorf("failed to parse line %q: %w", line, err)
+		}
+		nums = append(nums, int(val))
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return nums, nil
 }
 
 func save_current_pattern() {
@@ -140,7 +169,7 @@ func send_completion_message() {
 }
 
 func main() {
-	solution, _ = os.ReadFile("./src/solution.out")
+	solution, _ = ReadBinaryFile("./src/solution.out")
 	http.HandleFunc("/submit_code", submit_code)
 	http.HandleFunc("/light_pattern", light_pattern)
 	log.Fatal(http.ListenAndServe(":8081", nil))
