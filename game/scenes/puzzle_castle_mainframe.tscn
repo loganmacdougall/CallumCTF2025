@@ -160,8 +160,8 @@ Each of the \"tile\" functions will return the id of a tile. Here is a list of t
 1  - Ground
 2  - Sign
 4  - Wall
-5  - Door Open
-6  - Door Closed
+5  - Door Closed
+6  - Door Open
 3  - Lever Off
 7  - Lever On
 8  - Spike
@@ -170,6 +170,7 @@ Each of the \"tile\" functions will return the id of a tile. Here is a list of t
 [/ul]
 
 You can change any of the existing actions, or you can use one of the number actions which are by default unused:
+
 [ul]
 action_1 - (1)
 action_2 - (2)
@@ -193,7 +194,9 @@ string
 re
 [/ul]
 
-Use the power of the mainframe and conqour the world"
+When a level is completed, the rest of the action will be canceled. This allows for some flexibility in level solutions.
+
+Use the power of the mainframe and conqour the world!"
 
 [node name="ScreenShader" type="Sprite2D" parent="CanvasLayer"]
 top_level = true

@@ -7,6 +7,7 @@ RUN apk add --no-cache \
     py3-pip \
     py3-virtualenv \
     build-base \
+	gdb \
     git \
     curl \
     bash \
